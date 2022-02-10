@@ -1,0 +1,31 @@
+:root {
+    --primary-dark: #50674b;
+    --primary-base: #aab8ae;
+    --primary-light: #eaede7;
+
+    --accent-dark: #b24e37;
+    --accent-base: #e2d3c4;
+    --accent-light: #f2e9e3;
+
+    --text-regular: #333333;
+    --text-accent: var(--primary-base);
+    --text-light: #9a9a9f;
+
+    --font-brand: 'Reenie Beanie', cursive;
+    --font-body: 'Montserrat', sans-serif, monospace;
+    --font-heading: 'Kaisei Decol', serif, monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+}
+
+p {
+    font-family: var(--font-body);
+    font-weight: 400;
+}
+
+.brand-font {
+    font-family: var(--font-brand);
+}
