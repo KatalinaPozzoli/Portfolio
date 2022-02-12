@@ -124,7 +124,7 @@ export const WhoAmIDescription = styled.p`
 `
 
 //PROJECTS
-export const ProjectsContainer = styled.section`
+export const ProjectsSectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   padding-top: 2em;
@@ -140,15 +140,19 @@ export const ProjectsButtonsSection = styled.section`
   display: flex;
   gap: 1em;
 `
-export const ProjectButton = styled.button`
-  background-color: var(--accent-dark);
-  color: white;
+export const TypeOfProjectButton = styled.button<{ active: boolean }>`
+  transition: background-color .3s, color .3s;
+  background-color: ${ (props) => props.active ? 'var(--accent-dark)' : 'white'};
+  color: ${props => props.active ? 'white' : 'var(--accent-dark)' };
   font-family: var(--font-heading);
   font-weight: 300;
   border: none;
   border-radius: 1em;
   padding: 0.65em;
+  cursor: pointer;
+  
 `
+export const ProjectsContainer =styled.section``
 
 //CONTACT
 export const ContactMeContainer = styled.section`
