@@ -42,19 +42,19 @@ const ProjectDescription = styled.p`
   margin: 0 0 1.5em 0;
 
 `
-const ProjectButton = styled.button`
+const ProjectLink = styled.a`
   background-color: var(--primary-dark);
   color: white;
   font-family: var(--font-body);
   font-weight: 500;
+  font-size: 1em;
   border: none;
+  text-decoration: none;
   border-radius: 1em;
-  padding: 1.3em;
+  padding: 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-
 `
 
 const ArrowIcon = styled(FaArrowRight)`
@@ -66,13 +66,13 @@ const ArrowIcon = styled(FaArrowRight)`
 const ProjectCard: VoidFunctionComponent<PropsWithChildren<{ project: Project }>> = ({project}) => {
     return (
         <Container>
-            <ProjectImage src={project.image} alt="If I Were Image Thumbnail"></ProjectImage>
+            <ProjectImage src={project.image} alt="Project Image Thumbnail"></ProjectImage>
             <ProjectTitle>{project.title}</ProjectTitle>
             <ProjectToolsContainer>
                 {project.tools.map((tool,index) => <ProjectTools key={`tool-${index}`}>{tool}</ProjectTools>)}
             </ProjectToolsContainer>
             <ProjectDescription>{project.description}</ProjectDescription>
-            <ProjectButton> {project.buttonLabel} <ArrowIcon color="#FFFFFF"></ArrowIcon></ProjectButton>
+            <ProjectLink href={project.link} target="_blank"> {project.buttonLabel} <ArrowIcon color="#FFFFFF"> </ArrowIcon></ProjectLink>
         </Container>
     )
 }

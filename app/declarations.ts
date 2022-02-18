@@ -5,4 +5,5 @@ export interface Project {
     tools: string[];
     description: string;
     buttonLabel: string;
+    link: string;
 }

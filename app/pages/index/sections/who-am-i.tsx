@@ -1,5 +1,5 @@
 import {AboutMeContainer, InnerContainer, MeImage, WhoAmIDescription, WhoAmITitle} from "~/pages/index/index.styled";
-import img from '../../../assets/Imagen-ejemplo.png'
+import img from '../../../../public/assets/Imagen-ejemplo.png'
 
 const WhoAmI = () => {
     return (

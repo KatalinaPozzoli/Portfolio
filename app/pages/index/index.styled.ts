@@ -146,6 +146,7 @@ export const TypeOfProjectButton = styled.button<{ active: boolean }>`
   color: ${props => props.active ? 'white' : 'var(--accent-dark)' };
   font-family: var(--font-heading);
   font-weight: 300;
+  font-size: 0.8em;
   border: none;
   border-radius: 1em;
   padding: 0.65em;

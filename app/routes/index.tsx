@@ -30,19 +30,57 @@ export const loader: LoaderFunction = async () => {
     const projects: Project[] = [
         {
            type: 'DESIGN',
-           title: 'Titulo de Prueba',
-           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis massa lorem, a rutrum eros tempus sed. Pellentesque cursus ipsum id purus pharetra mattis. Fusce diam ipsum, fermentum nec lorem in, fermentum blandit risus. Quisque elementum eros fringilla nunc porta sodales. Fusce accumsan urna non nunc faucibus, a eleifend tellus ultricies. Morbi vitae lorem tellus. Donec posuere mollis est sed interdum. Etiam lobortis vehicula congue. Proin ut dui a nisi consectetur ultrices. Aenean rhoncus, risus non congue faucibus, tortor neque iaculis metus, tempor congue diam augue vitae ex.',
-            tools: ['FIGMA', 'PHOTOSHOP', 'ILLUSTRATOR'],
-            image: '/assets/IfIWere-thumbnail.png',
-            buttonLabel: 'Read the study case'
+           title: 'IfIWere',
+           description: 'Designing and end-to-ent mobile app as a final project of a UX/UI bootcamp',
+            tools: ['UX RESEARCH', 'UX DESIGN', 'UI DESIGN', 'PROTOTYPING', 'USER TESTING', 'FIGMA'],
+            image: '/assets/KP-IfIWere-thumbnail.png',
+            buttonLabel: 'Read the study case',
+            link: 'https://www.behance.net/gallery/134652681/IfIWere'
+        },
+        {
+            type: 'DESIGN',
+            title: 'Dribble Designs',
+            description: 'Designing DailyUI Challenge to practice',
+            tools: [ 'UI DESIGN', 'FIGMA'],
+            image: '/assets/KP-DailyUi-thumbnail.png',
+            buttonLabel: 'See all the shots',
+            link: 'https://dribbble.com/KatitaP'
         },
         {
             type: 'DEVELOPMENT',
-            title: 'Prueba Development',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis massa lorem, a rutrum eros tempus sed. Pellentesque cursus ipsum id purus pharetra mattis. Fusce diam ipsum, fermentum nec lorem in, fermentum blandit risus. Quisque elementum eros fringilla nunc porta sodales. Fusce accumsan urna non nunc faucibus, a eleifend tellus ultricies. Morbi vitae lorem tellus. Donec posuere mollis est sed interdum. Etiam lobortis vehicula congue. Proin ut dui a nisi consectetur ultrices. Aenean rhoncus, risus non congue faucibus, tortor neque iaculis metus, tempor congue diam augue vitae ex.',
-            tools: ['FIGMA', 'Angular', 'ILLUSTRATOR'],
+            title: 'My portfolio',
+            description: 'I designed and developed my own page. I made it on React because i wanted to learn a new JS framework',
+            tools: ['FIGMA', 'REMIX', 'REACT', 'TYPESCRIPT', 'HTML', 'CSS'],
             image: '/assets/IfIWere-thumbnail.png',
-            buttonLabel: 'Read the study case'
+            buttonLabel: 'Try it',
+            link: ''
+        },
+        {
+            type: 'DEVELOPMENT',
+            title: 'Budget Calculator',
+            description: 'This project is a budget calculator made in angular, you can set your income and your expenses, and it calculates your budget',
+            tools: ['ANGULAR 13', 'TYPESCRIPT', 'HTML', 'CSS'],
+            image: '/assets/BudgetApp.png',
+            buttonLabel: 'Try it',
+            link: ''
+        },
+        {
+            type: 'DEVELOPMENT',
+            title: 'Tic-Tac-Toe',
+            description: 'This game is one of the most popular, so I wanted to replicate it just to practice',
+            tools: ['ANGULAR 13', 'TYPESCRIPT', 'HTML', 'CSS'],
+            image: '/assets/Myapp.png',
+            buttonLabel: 'Try it',
+            link: ''
+        },
+        {
+            type: 'DEVELOPMENT',
+            title: 'To do list',
+            description: 'I made a to-do list in angular to practice, you can see all your tasks, your completed tasks, and even clear the ones that you have already made',
+            tools: ['ANGULAR 13', 'TYPESCRIPT', 'HTML', 'CSS'],
+            image: '/assets/TodoAngular.png',
+            buttonLabel: 'Try it',
+            link: ''
         },
     ]
     return {projects}
