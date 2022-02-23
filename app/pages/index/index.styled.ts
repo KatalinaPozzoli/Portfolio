@@ -24,7 +24,7 @@ export const Container = styled.main`
 `
 
 export const InnerContainer = styled.section`
-  max-width: 1280px;
+  max-width: 1040px;
   width: 100%;
   margin: 0 auto;
 `
@@ -65,8 +65,12 @@ export const FooterLine = styled.span`
 //DESCRIPTION SECTION
 export const WelcomeTitle = styled.h1`
   font-size: 1.5em;
-  margin-top: 100px;
+  margin-top: 196px;
   margin-bottom: 1em;
+  width: 270px;
+  @media screen and (min-width: 768px) {
+    width: 100%;
+  }
 `
 export const WelcomeTitleName = styled.span`
   font-size: 1.75em;
@@ -100,21 +104,39 @@ export const BehanceIcon = styled(FaBehanceSquare)`
 `
 
 //ABOUT ME SECTION
-export const AboutMeContainer = styled.section`
-  display: flex;
-  flex-direction: column;
+export const AboutMeSection = styled.section`
   background-color: var(--primary-light);
   margin-left: -2em;
   margin-right: -2em;
   margin-top: 2.5em;
   padding: 2em;
 `
+
+export const AboutMeContainer = styled(InnerContainer)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+`
+
 export const MeImage = styled.img`
   display: flex;
   width: 235px;
   height: auto;
-  align-self: center;
 `
+export const AboutMeDescriptionText = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media screen and (min-width: 768px) {
+    margin-left: 2em;
+    max-width: 850px;
+}
+`
+
 export const WhoAmITitle = styled.h2`
   margin-bottom: 8px;
 `
@@ -142,29 +164,46 @@ export const ProjectsButtonsSection = styled.section`
 `
 export const TypeOfProjectButton = styled.button<{ active: boolean }>`
   transition: background-color .3s, color .3s;
-  background-color: ${ (props) => props.active ? 'var(--accent-dark)' : 'white'};
-  color: ${props => props.active ? 'white' : 'var(--accent-dark)' };
+  background-color: ${(props) => props.active ? 'var(--accent-dark)' : 'white'};
+  color: ${props => props.active ? 'white' : 'var(--accent-dark)'};
   font-family: var(--font-heading);
   font-weight: 300;
-  font-size: 0.8em;
+  font-size: 1em;
   border: none;
   border-radius: 1em;
-  padding: 0.65em;
+  padding: 0.5em 2em;
   cursor: pointer;
-  
+
 `
-export const ProjectsContainer =styled.section``
+export const ProjectsContainer = styled.section``
 
 //CONTACT
 export const ContactMeContainer = styled.section`
-  display: flex;
-  flex-direction: column;
   background-color: var(--accent-light);
   margin-left: -2em;
   margin-right: -2em;
   margin-top: 2.5em;
   padding: 2em;
 `
+export const FormSectionContainer = styled.section`
+  display: flex;
+`
+export const FormBodySectionContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @media screen and (min-width: 768px){
+    margin-left: 2em;
+  }
+`
+
+export const ContactMeImage = styled.img`
+  display: none;
+  @media screen and (min-width: 768px){
+    display: flex;
+  }
+`
+
 export const ContactMeTitle = styled.h2`
   margin-top: 0;
   margin-bottom: 8px;

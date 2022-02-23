@@ -15,8 +15,7 @@ const Introduction = () => {
             <WelcomeTitle>
                 Hey there! <br/>
                 I’m <WelcomeTitleName>Katalina</WelcomeTitleName>, <br/>
-                a UX designer and <br/>
-                Front-end Developer
+                a UX designer and Front-end Developer
             </WelcomeTitle>
             <SocialMediaLinksContainer>
                 <a href="https://www.linkedin.com/in/katalina-pozzoli/" target="_blank" aria-label="linked-in-katalina-pozzoli">

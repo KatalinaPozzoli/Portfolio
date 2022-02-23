@@ -13,7 +13,7 @@ import {
     Footer,
     FooterLine,
     GitHubIcon,
-    HamburgerMenu,
+    InnerContainer,
     LinkedInIcon,
     NavBar,
     SocialMediaLinksContainer
@@ -29,9 +29,9 @@ import {Project} from "~/declarations";
 export const loader: LoaderFunction = async () => {
     const projects: Project[] = [
         {
-           type: 'DESIGN',
-           title: 'IfIWere',
-           description: 'Designing and end-to-ent mobile app as a final project of a UX/UI bootcamp',
+            type: 'DESIGN',
+            title: 'IfIWere',
+            description: 'Designing and end-to-ent mobile app as a final project of a UX/UI bootcamp',
             tools: ['UX RESEARCH', 'UX DESIGN', 'UI DESIGN', 'PROTOTYPING', 'USER TESTING', 'FIGMA'],
             image: '/assets/KP-IfIWere-thumbnail.png',
             buttonLabel: 'Read the study case',
@@ -41,7 +41,7 @@ export const loader: LoaderFunction = async () => {
             type: 'DESIGN',
             title: 'Dribble Designs',
             description: 'Designing DailyUI Challenge to practice',
-            tools: [ 'UI DESIGN', 'FIGMA'],
+            tools: ['UI DESIGN', 'FIGMA'],
             image: '/assets/KP-DailyUi-thumbnail.png',
             buttonLabel: 'See all the shots',
             link: 'https://dribbble.com/KatitaP'
@@ -87,15 +87,17 @@ export const loader: LoaderFunction = async () => {
 }
 
 export default function Index() {
-    const { projects } = useLoaderData()
+    const {projects} = useLoaderData()
 
     return (
         <>
             <Container>
+                <InnerContainer>
                 <NavBar>
-                    <BrandTitle>Katalina Pozzoli</BrandTitle>
-                    <HamburgerMenu/>
+                        <BrandTitle>Katalina Pozzoli</BrandTitle>
+                        {/*<HamburgerMenu/>*/}
                 </NavBar>
+                </InnerContainer>
                 <Introduction/>
                 <WhoAmI/>
                 <Projects projects={projects}/>

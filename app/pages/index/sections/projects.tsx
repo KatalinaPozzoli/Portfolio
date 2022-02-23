@@ -21,7 +21,7 @@ const Projects: VoidFunctionComponent<PropsWithChildren<{ projects: Project[] }>
                 <ProjectsTitle> Projects </ProjectsTitle>
                 <ProjectsDescription>Here you can see some of my personal projects</ProjectsDescription>
                 <ProjectsButtonsSection>
-                    <TypeOfProjectButton active={activeType === 'DESIGN'} onClick={() => handleStateChange('DESIGN')}> Product Design </TypeOfProjectButton>
+                    <TypeOfProjectButton active={activeType === 'DESIGN'} onClick={() => handleStateChange('DESIGN')}> UX Design </TypeOfProjectButton>
                     <TypeOfProjectButton active={activeType === 'DEVELOPMENT'} onClick={() => handleStateChange('DEVELOPMENT')}> Development </TypeOfProjectButton>
                 </ProjectsButtonsSection>
                 <ProjectsContainer>

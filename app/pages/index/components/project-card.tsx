@@ -4,20 +4,56 @@ import {DynamicIcon} from "~/pages/index/index.styled";
 import {PropsWithChildren, VoidFunctionComponent} from "react";
 import {Project} from "~/declarations";
 
-const Container = styled.main`
+const Container = styled.section`
   padding: 1.5em;
   display: flex;
   flex-direction: column;
+  
+  
+  border-radius: 1em;
+  margin-top: 2em;
+  transition: box-shadow .6s;
+  box-shadow: 0 2px 8px rgba(170, 184, 174, 0.3);
+  :hover {
+    box-shadow: 4px 4px 25px rgba(170, 184, 174, 0.51);
+  }
+  @media screen and (min-width: 768px){
+    flex-direction: row-reverse;
+    align-items: stretch;
+    gap: 2em;
+  }
 `
+
+const ProjectImageContainer = styled.section`
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  @media screen and (min-width: 768px) {
+    width: 45%;
+  }
+`
+
 const ProjectImage = styled.img`
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto; 
   border-radius: 1em;
-
+`
+const ProjectBodyContainer = styled.section`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  @media screen and (min-width: 768px) {
+    padding: 1.5em 1em;
+  }
+`
+const ProjectBody = styled.section`
+  display: flex;
+  flex-direction: column;
 `
 
 const ProjectTitle = styled.h2`
-  margin: 1em 0 1em 0;
 `
 
 const ProjectToolsContainer = styled.section`
@@ -25,8 +61,6 @@ const ProjectToolsContainer = styled.section`
   flex-wrap: wrap;
   column-gap: 1em;
   row-gap: 0.5em;
-  margin-bottom: 1em;
-
 `
 
 const ProjectTools = styled.h4`
@@ -39,22 +73,27 @@ const ProjectTools = styled.h4`
 `
 
 const ProjectDescription = styled.p`
-  margin: 0 0 1.5em 0;
-
 `
 const ProjectLink = styled.a`
   background-color: var(--primary-dark);
   color: white;
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 300;
   font-size: 1em;
   border: none;
   text-decoration: none;
   border-radius: 1em;
-  padding: 1em;
-  display: flex;
+  padding: 0.5em 1em;
+  display: inline-flex;
   justify-content: space-between;
+  gap: 1.5em;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media screen and (min-width: 768px) {
+    max-width: 280px;
+  }
 `
 
 const ArrowIcon = styled(FaArrowRight)`
@@ -62,17 +101,24 @@ const ArrowIcon = styled(FaArrowRight)`
 `
 
 
-
 const ProjectCard: VoidFunctionComponent<PropsWithChildren<{ project: Project }>> = ({project}) => {
     return (
         <Container>
-            <ProjectImage src={project.image} alt="Project Image Thumbnail"></ProjectImage>
-            <ProjectTitle>{project.title}</ProjectTitle>
-            <ProjectToolsContainer>
-                {project.tools.map((tool,index) => <ProjectTools key={`tool-${index}`}>{tool}</ProjectTools>)}
-            </ProjectToolsContainer>
-            <ProjectDescription>{project.description}</ProjectDescription>
-            <ProjectLink href={project.link} target="_blank"> {project.buttonLabel} <ArrowIcon color="#FFFFFF"> </ArrowIcon></ProjectLink>
+            <ProjectImageContainer>
+                <ProjectImage src={project.image} alt="Project Image Thumbnail"></ProjectImage>
+            </ProjectImageContainer>
+            <ProjectBodyContainer>
+                <ProjectBody>
+                    <ProjectTitle>{project.title}</ProjectTitle>
+                    <ProjectToolsContainer>
+                        {project.tools.map((tool, index) => <ProjectTools key={`tool-${index}`}>{tool}</ProjectTools>)}
+                    </ProjectToolsContainer>
+                    <ProjectDescription>{project.description}</ProjectDescription>
+                </ProjectBody>
+                <ProjectLink href={project.link} target="_blank"> <span>{project.buttonLabel}</span> <ArrowIcon
+                    color="#FFFFFF"> </ArrowIcon></ProjectLink>
+            </ProjectBodyContainer>
+
         </Container>
     )
 }

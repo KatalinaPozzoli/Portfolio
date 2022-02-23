@@ -1,18 +1,24 @@
-import {AboutMeContainer, InnerContainer, MeImage, WhoAmIDescription, WhoAmITitle} from "~/pages/index/index.styled";
+import {
+    AboutMeContainer,
+    AboutMeDescriptionText,
+    AboutMeSection,
+    MeImage,
+    WhoAmIDescription,
+    WhoAmITitle
+} from "~/pages/index/index.styled";
 import img from '../../../../public/assets/Imagen-ejemplo.png'
 
 const WhoAmI = () => {
     return (
-        <AboutMeContainer>
-            <InnerContainer>
+        <AboutMeSection>
+            <AboutMeContainer>
                 <MeImage src={img} alt="katalina-pozzoli-image"/>
-                <WhoAmITitle>Who am I?</WhoAmITitle>
-                <WhoAmIDescription>Hi, I'm a User experience designer and web developer based in Argentina.
-                    I started in the world of technology two years ago, and since then I haven't stopped learning.
-                    I consider myself a curious person, I like challenges, problem-solving, and working with
-                    people.</WhoAmIDescription>
-            </InnerContainer>
-        </AboutMeContainer>
+                <AboutMeDescriptionText>
+                    <WhoAmITitle>Who am I?</WhoAmITitle>
+                    <WhoAmIDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean odio eros, sollicitudin id elit sed, tristique vehicula lorem. Cras tristique, urna eget molestie accumsan, justo ex vulputate lectus, vel facilisis tellus enim ac nibh. Proin ornare eros purus, non consequat felis placerat quis. Vestibulum sed ullamcorper urna. Etiam feugiat magna justo, et bibendum nisl finibus sed. Integer quis lobortis diam. Nulla sodales quis elit ac porta. Suspendisse dignissim velit vitae ultricies euismod. Vivamus ornare est vitae leo ultricies, a dapibus nunc ornare. Suspendisse lacinia placerat lacus in interdum. Morbi fermentum nibh congue volutpat dictum.</WhoAmIDescription>
+                </AboutMeDescriptionText>
+            </AboutMeContainer>
+        </AboutMeSection>
     )
 }
 
