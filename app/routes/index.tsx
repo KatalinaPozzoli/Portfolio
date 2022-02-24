@@ -60,7 +60,7 @@ export const loader: LoaderFunction = async () => {
             title: 'Budget Calculator',
             description: 'This project is a budget calculator made in angular, you can set your income and your expenses, and it calculates your budget',
             tools: ['ANGULAR 13', 'TYPESCRIPT', 'HTML', 'CSS'],
-            image: '/assets/BudgetApp.png',
+            image: '/assets/kp-budget-calculator.png',
             buttonLabel: 'Try it',
             link: ''
         },
@@ -69,7 +69,7 @@ export const loader: LoaderFunction = async () => {
             title: 'Tic-Tac-Toe',
             description: 'This game is one of the most popular, so I wanted to replicate it just to practice',
             tools: ['ANGULAR 13', 'TYPESCRIPT', 'HTML', 'CSS'],
-            image: '/assets/Myapp.png',
+            image: '/assets/kp-tateti.png',
             buttonLabel: 'Try it',
             link: ''
         },
@@ -78,7 +78,7 @@ export const loader: LoaderFunction = async () => {
             title: 'To do list',
             description: 'I made a to-do list in angular to practice, you can see all your tasks, your completed tasks, and even clear the ones that you have already made',
             tools: ['ANGULAR 13', 'TYPESCRIPT', 'HTML', 'CSS'],
-            image: '/assets/TodoAngular.png',
+            image: '/assets/kp-todo.png',
             buttonLabel: 'Try it',
             link: ''
         },
