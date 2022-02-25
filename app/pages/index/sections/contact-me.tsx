@@ -2,17 +2,21 @@ import {
     ContactMeContainer,
     ContactMeDescription,
     ContactMeForm,
-    ContactMeInput,
     ContactMeImage,
+    ContactMeInput,
     ContactMeTextarea,
-    ContactMeTitle, InnerContainer,
-    PortfolioButton, FormSectionContainer, FormBodySectionContainer
+    ContactMeTitle,
+    FormBodySectionContainer,
+    FormSectionContainer,
+    InnerContainer,
+    PortfolioButton
 } from "~/pages/index/index.styled";
 import ContactFormMeImage from '../../../../public/assets/ContactFormMeImage.png'
+import {forwardRef} from "react";
 
-const ContactMe = () => {
+const ContactMe = forwardRef<HTMLElement>(({}, ref) => {
     return (
-        <ContactMeContainer>
+        <ContactMeContainer ref={ref}>
             <InnerContainer>
                 <FormSectionContainer>
                     <ContactMeImage src={ContactFormMeImage}></ContactMeImage>
@@ -30,6 +34,6 @@ const ContactMe = () => {
             </InnerContainer>
         </ContactMeContainer>
     )
-}
+})
 
 export default ContactMe;

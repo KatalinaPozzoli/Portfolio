@@ -15,6 +15,9 @@ import {
     GitHubIcon,
     InnerContainer,
     LinkedInIcon,
+    MenuItem,
+    MenuItemButton,
+    MenuList,
     NavBar,
     SocialMediaLinksContainer
 } from "~/pages/index/index.styled";
@@ -22,9 +25,10 @@ import Introduction from "~/pages/index/sections/introduction";
 import WhoAmI from "~/pages/index/sections/who-am-i";
 import Projects from "~/pages/index/sections/projects";
 import ContactMe from "~/pages/index/sections/contact-me";
-import React from "react";
+import React, {MutableRefObject, useRef} from "react";
 import {LoaderFunction, useLoaderData} from "remix";
 import {Project} from "~/declarations";
+import {animateScroll} from "~/utils/animateScroll";
 
 export const loader: LoaderFunction = async () => {
     const projects: Project[] = [
@@ -89,6 +93,11 @@ export const loader: LoaderFunction = async () => {
 export default function Index() {
     const {projects} = useLoaderData()
 
+    const scrollTo = (element: HTMLElement, duration = 1000) => {
+        const initialPosition = window.scrollY;
+        animateScroll({ targetPosition: element.offsetTop, initialPosition, duration })
+    }
+
     return (
         <>
             <Container>
@@ -96,12 +105,23 @@ export default function Index() {
                 <NavBar>
                         <BrandTitle>Katalina Pozzoli</BrandTitle>
                         {/*<HamburgerMenu/>*/}
-                </NavBar>
+                        <MenuList>
+                            {Object.values(sections).map(({label, action, relatedRef}) =>
+                                (
+                                    <MenuItem key={`section-${label}`}>
+                                        <MenuItemButton onClick={() => action(relatedRef?.current)}>
+                                            {label}
+                                        </MenuItemButton>
+                                    </MenuItem>
+                                )
+                            )}
+                        </MenuList>
+                    </NavBar>
                 </InnerContainer>
                 <Introduction/>
-                <WhoAmI/>
-                <Projects projects={projects}/>
-                <ContactMe/>
+                <WhoAmI ref={sections.whoAmI.relatedRef}/>
+                <Projects ref={sections.projects.relatedRef} projects={projects}/>
+                <ContactMe ref={sections.contactMe.relatedRef}/>
             </Container>
             <Footer>
                 <BrandFooterTitle>You can find me</BrandFooterTitle>

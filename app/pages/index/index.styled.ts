@@ -28,7 +28,7 @@ export const InnerContainer = styled.section`
   width: 100%;
   margin: 0 auto;
 `
-
+//NAVBAR
 export const NavBar = styled.nav`
   height: 40px;
   display: flex;
@@ -39,6 +39,30 @@ export const NavBar = styled.nav`
 export const BrandTitle = styled.h1`
   font-size: 1.5em;
   font-family: var(--font-brand);
+  flex: 1;
+`
+
+export const MenuList = styled.ul`
+  display: flex;
+  list-style: none;
+  flex: 1;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+`
+
+export const MenuItem = styled.li`
+  height: 100%;
+`
+
+export const MenuItemButton = styled.button`
+  font-size: 1em;
+  font-family: var(--font-heading);
+  color: var(--text-regular);
+  cursor: pointer;
+  background: none;
+  outline: none;
+  border: none;
 `
 
 //FOOTER
@@ -76,6 +100,7 @@ export const WelcomeTitleName = styled.span`
   font-size: 1.75em;
   font-family: var(--font-brand);
   color: var(--accent-dark);
+  margin-left: 0.1em;
 `
 export const SocialMediaLinksContainer = styled.section`
   display: flex;
@@ -110,6 +135,10 @@ export const AboutMeSection = styled.section`
   margin-right: -2em;
   margin-top: 2.5em;
   padding: 2em;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 4em;
+  }
 `
 
 export const AboutMeContainer = styled(InnerContainer)`
@@ -134,7 +163,7 @@ export const AboutMeDescriptionText = styled.section`
   @media screen and (min-width: 768px) {
     margin-left: 2em;
     max-width: 850px;
-}
+  }
 `
 
 export const WhoAmITitle = styled.h2`
@@ -149,7 +178,8 @@ export const WhoAmIDescription = styled.p`
 export const ProjectsSectionContainer = styled.section`
   display: flex;
   flex-direction: column;
-  padding-top: 2em;
+  margin-top: 2em;
+  padding-top: 1em;
 `
 export const ProjectsTitle = styled.h2`
   margin-bottom: 8px;
@@ -184,6 +214,9 @@ export const ContactMeContainer = styled.section`
   margin-right: -2em;
   margin-top: 2.5em;
   padding: 2em;
+  @media screen and (min-width: 768px){
+    margin-top: 4em;
+  }
 `
 export const FormSectionContainer = styled.section`
   display: flex;
@@ -192,14 +225,14 @@ export const FormBodySectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     margin-left: 2em;
   }
 `
 
 export const ContactMeImage = styled.img`
   display: none;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     display: flex;
   }
 `
