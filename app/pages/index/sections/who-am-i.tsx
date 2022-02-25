@@ -9,7 +9,7 @@ import {
 import img from '../../../../public/assets/Imagen-ejemplo.png'
 import {forwardRef} from "react";
 
-const WhoAmI = () => {
+const WhoAmI = forwardRef<HTMLElement>(({}, ref) => {
     return (
         <AboutMeSection ref={ref}>
             <AboutMeContainer>
@@ -28,6 +28,6 @@ const WhoAmI = () => {
             </AboutMeContainer>
         </AboutMeSection>
     )
-}
+})
 
 export default WhoAmI;

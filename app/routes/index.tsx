@@ -90,6 +90,12 @@ export const loader: LoaderFunction = async () => {
     return {projects}
 }
 
+interface MenuSectionDeclaration {
+    label: string
+    action: (...args: any[]) => void,
+    relatedRef?: MutableRefObject<HTMLElement | null>
+}
+
 export default function Index() {
     const {projects} = useLoaderData()
 
@@ -98,11 +104,33 @@ export default function Index() {
         animateScroll({ targetPosition: element.offsetTop, initialPosition, duration })
     }
 
+    const sections: Record<string, MenuSectionDeclaration> = {
+        whoAmI: {
+            label: 'About Me',
+            action: scrollTo,
+            relatedRef: useRef<HTMLElement>(null)
+        },
+        projects: {
+            label: 'Projects',
+            action: scrollTo,
+            relatedRef: useRef<HTMLElement>(null)
+        },
+        contactMe: {
+            label: 'Contact Me',
+            action: scrollTo,
+            relatedRef: useRef<HTMLElement>(null)
+        },
+        resume: {
+            label: 'Resume',
+            action: () => {}
+        }
+    };
+
     return (
         <>
             <Container>
                 <InnerContainer>
-                <NavBar>
+                    <NavBar>
                         <BrandTitle>Katalina Pozzoli</BrandTitle>
                         {/*<HamburgerMenu/>*/}
                         <MenuList>
