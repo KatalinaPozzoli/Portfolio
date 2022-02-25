@@ -11,7 +11,7 @@ import type { MetaFunction } from "remix";
 import coreStyles from '~/styles/core.css';
 
 export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
+  return { title: "Katalina Pozzoli Portfolio" };
 };
 
 export const links: LinksFunction = () => {

@@ -3,10 +3,31 @@ import {HiMenuAlt3} from 'react-icons/hi';
 import {FaBehanceSquare, FaDribbble, FaGithub, FaLinkedin} from "react-icons/fa";
 
 //COMMONS
+export const LeafIllustrationLeft = styled.img`
+  display: none;
+  @media screen and (min-width: 1340px){
+    display: flex;
+    position: absolute;
+    height: 30em;
+    top: 0;
+    left: 2em;
+  }
+`
+export const LeafIllustrationRight= styled.img`
+  display: none;
+  @media screen and (min-width: 1340px){
+    display: flex;
+    position: absolute;
+    height: 30em;
+    top: 0;
+    right: 2em;
+  }
+`
 export const DynamicIcon = css`
   width: ${(props: any) => props.size || '1.5em'};
   height: ${(props: any) => props.size || '1.5em'};
-  color: ${(props: any) => props.color || 'var(--primary-base)'}
+  color: ${(props: any) => props.color || 'var(--primary-base)'};
+  cursor: pointer;
 `
 export const PortfolioButton = styled.button`
   background-color: var(--primary-dark);
@@ -32,7 +53,6 @@ export const InnerContainer = styled.section`
 export const NavBar = styled.nav`
   height: 40px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 `
 
@@ -43,26 +63,52 @@ export const BrandTitle = styled.h1`
 `
 
 export const MenuList = styled.ul`
-  display: flex;
+  display: none;
   list-style: none;
   flex: 1;
   width: 100%;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: flex-end;
+  gap: 1.5em;
+  @media screen and (min-width: 768px){
+  display: flex;
+}
 `
 
 export const MenuItem = styled.li`
   height: 100%;
+  position: relative;
+  &:hover, &.active {
+    color: var(--accent-dark);
+    &:after, &:before {
+      width: 50%;
+    }
+  }
+  &:after, &:before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 0.25em);
+    width: 0;
+    height: 1px;
+    background: var(--accent-dark);
+    transition: width .3s;
+  }
+  &:after {
+    right: 50%;
+  }
+  &:before {
+    left: 50%
+  }
 `
 
 export const MenuItemButton = styled.button`
   font-size: 1em;
   font-family: var(--font-heading);
-  color: var(--text-regular);
   cursor: pointer;
   background: none;
   outline: none;
   border: none;
+  color: inherit;
 `
 
 //FOOTER
@@ -113,6 +159,7 @@ export const SocialMediaLinksContainer = styled.section`
 export const HamburgerMenu = styled(HiMenuAlt3)`
   ${DynamicIcon};
   color: var(--primary-dark);
+ 
 `
 
 export const LinkedInIcon = styled(FaLinkedin)`
@@ -167,7 +214,6 @@ export const AboutMeDescriptionText = styled.section`
 `
 
 export const WhoAmITitle = styled.h2`
-  margin-bottom: 8px;
 `
 
 export const WhoAmIDescription = styled.p`

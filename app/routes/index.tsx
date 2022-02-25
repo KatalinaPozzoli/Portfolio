@@ -19,7 +19,7 @@ import {
     MenuItemButton,
     MenuList,
     NavBar,
-    SocialMediaLinksContainer
+    SocialMediaLinksContainer, LeafIllustrationLeft, LeafIllustrationRight
 } from "~/pages/index/index.styled";
 import Introduction from "~/pages/index/sections/introduction";
 import WhoAmI from "~/pages/index/sections/who-am-i";
@@ -29,6 +29,7 @@ import React, {MutableRefObject, useRef} from "react";
 import {LoaderFunction, useLoaderData} from "remix";
 import {Project} from "~/declarations";
 import {animateScroll} from "~/utils/animateScroll";
+import Leaf from '../../public/assets/KP-leaf.png'
 
 export const loader: LoaderFunction = async () => {
     const projects: Project[] = [
@@ -122,17 +123,20 @@ export default function Index() {
         },
         resume: {
             label: 'Resume',
-            action: () => {}
+            action: () => {
+                window.open('https://api.cdn.doesrobbiedream.com/katita/PozzoliKatalinaCV.pdf')
+            }
         }
     };
 
     return (
         <>
             <Container>
+                <LeafIllustrationLeft src={Leaf}></LeafIllustrationLeft>
+                <LeafIllustrationRight src={Leaf}></LeafIllustrationRight>
                 <InnerContainer>
                     <NavBar>
                         <BrandTitle>Katalina Pozzoli</BrandTitle>
-                        {/*<HamburgerMenu/>*/}
                         <MenuList>
                             {Object.values(sections).map(({label, action, relatedRef}) =>
                                 (
@@ -166,7 +170,7 @@ export default function Index() {
                     </a>
                     <a href="https://www.behance.net/katalinaPozzoli" target="_blank"
                        aria-label="behance-katalina-pozzoli">
-                        <BehanceIcon size="1.5em" color="#333333"></BehanceIcon>
+                        <BehanceIcon size="1.7em" color="#333333"></BehanceIcon>
                     </a>
                 </SocialMediaLinksContainer>
                 <FooterLine></FooterLine>
