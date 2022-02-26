@@ -5,22 +5,30 @@ import {FaBehanceSquare, FaDribbble, FaGithub, FaLinkedin} from "react-icons/fa"
 //COMMONS
 export const LeafIllustrationLeft = styled.img`
   display: none;
-  @media screen and (min-width: 1340px){
+  @media screen and (min-width: 1340px) {
     display: flex;
     position: absolute;
     height: 30em;
     top: 0;
     left: 2em;
   }
+  @media screen and (min-width: 1920px) {
+    left: 10em;
+    height: 35em;
+  }
 `
-export const LeafIllustrationRight= styled.img`
+export const LeafIllustrationRight = styled.img`
   display: none;
-  @media screen and (min-width: 1340px){
+  @media screen and (min-width: 1340px) {
     display: flex;
     position: absolute;
     height: 30em;
     top: 0;
     right: 2em;
+  }
+  @media screen and (min-width: 1700px) {
+    height: 35em;
+    right: 10em;
   }
 `
 export const DynamicIcon = css`
@@ -69,21 +77,29 @@ export const MenuList = styled.ul`
   width: 100%;
   align-items: center;
   justify-content: flex-end;
-  gap: 1.5em;
-  @media screen and (min-width: 768px){
-  display: flex;
-}
+  gap: 1em;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    font-size: 0.8em;
+  }
+  @media screen and (min-width: 940px) {
+    gap: 1.5em;
+    font-size: 1em;
+  }
 `
 
 export const MenuItem = styled.li`
   height: 100%;
   position: relative;
+
   &:hover, &.active {
     color: var(--accent-dark);
+
     &:after, &:before {
       width: 50%;
     }
   }
+
   &:after, &:before {
     content: '';
     position: absolute;
@@ -93,9 +109,11 @@ export const MenuItem = styled.li`
     background: var(--accent-dark);
     transition: width .3s;
   }
+
   &:after {
     right: 50%;
   }
+
   &:before {
     left: 50%
   }
@@ -159,7 +177,7 @@ export const SocialMediaLinksContainer = styled.section`
 export const HamburgerMenu = styled(HiMenuAlt3)`
   ${DynamicIcon};
   color: var(--primary-dark);
- 
+
 `
 
 export const LinkedInIcon = styled(FaLinkedin)`
@@ -260,7 +278,7 @@ export const ContactMeContainer = styled.section`
   margin-right: -2em;
   margin-top: 2.5em;
   padding: 2em;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     margin-top: 4em;
   }
 `

@@ -63,11 +63,11 @@ const ProjectToolsContainer = styled.section`
   row-gap: 0.5em;
 `
 
-const ProjectTools = styled.h4`
+const ProjectTools = styled.h3`
   display: inline-flex;
   margin: 0;
   font-family: var(--font-body);
-  color: var(--primary-base);
+  color: #747771;
   font-size: 12px;
   font-weight: 500;
 `

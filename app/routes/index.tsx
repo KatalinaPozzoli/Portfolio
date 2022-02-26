@@ -132,8 +132,8 @@ export default function Index() {
     return (
         <>
             <Container>
-                <LeafIllustrationLeft src={Leaf}></LeafIllustrationLeft>
-                <LeafIllustrationRight src={Leaf}></LeafIllustrationRight>
+                <LeafIllustrationLeft src={Leaf} alt="leaf-illustration-decoration"></LeafIllustrationLeft>
+                <LeafIllustrationRight src={Leaf} alt="leaf-illustration-decoration"></LeafIllustrationRight>
                 <InnerContainer>
                     <NavBar>
                         <BrandTitle>Katalina Pozzoli</BrandTitle>

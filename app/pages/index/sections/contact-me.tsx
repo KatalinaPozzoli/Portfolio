@@ -19,7 +19,7 @@ const ContactMe = forwardRef<HTMLElement>(({}, ref) => {
         <ContactMeContainer ref={ref}>
             <InnerContainer>
                 <FormSectionContainer>
-                    <ContactMeImage src={ContactFormMeImage}></ContactMeImage>
+                    <ContactMeImage src={ContactFormMeImage} alt="Katalina-pozzoli-image"></ContactMeImage>
                     <FormBodySectionContainer>
                         <ContactMeTitle>Lets Talk!</ContactMeTitle>
                         <ContactMeDescription>I’d love to know about you</ContactMeDescription>
