@@ -31,16 +31,42 @@ import React, {MutableRefObject, useEffect, useRef} from "react";
 import {ActionFunction, LoaderFunction, useActionData, useLoaderData} from "remix";
 import {Project} from "~/declarations";
 import {animateScroll} from "~/utils/animateScroll";
-import Leaf from '../../public/assets/KP-leaf.png'
+import Leaf from '../../public/assets/KP-leaf.png';
+import sendContactMail from '~/utils/contactEmail/sendMail'
+import createTransporter from "../utils/contactEmail/createTransport";
 
 export const action: ActionFunction = async ({request}) => {
     const body = await request.formData();
+    const parsed: Record<string, any> = {}
+    for (const [key, value] of body.entries()) {
+        parsed[key] = value
+    }
+    try {
+        const transporter = createTransporter({
+            service: 'SendinBlue',
+            auth: {
+                user: 'katalinapozzoli2000@gmail.com',
+                pass: process.env.SMTP_SERVER_KEY
+            }
+        })
 
-    return {
-        status: 450,
-        success: false,
-        message: "This service is not yet active. Please, contact me on social media."
-    };
+        const response = await sendContactMail
+        (transporter)
+        ({from: parsed.email, content: parsed.message})
+
+        return {
+            status: 200,
+            success: true,
+            message: "I received your message! Will contact you soon!"
+        }
+    } catch (e) {
+
+        return {
+            status: 500,
+            success: false,
+            message: "The email server failed on deliver your message. Please, contact me on social media."
+        }
+    }
 }
 
 export const loader: LoaderFunction = async () => {
