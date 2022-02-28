@@ -14,22 +14,34 @@ import {
     FooterLine,
     GitHubIcon,
     InnerContainer,
+    LeafIllustrationLeft,
+    LeafIllustrationRight,
     LinkedInIcon,
     MenuItem,
     MenuItemButton,
     MenuList,
     NavBar,
-    SocialMediaLinksContainer, LeafIllustrationLeft, LeafIllustrationRight
+    SocialMediaLinksContainer
 } from "~/pages/index/index.styled";
 import Introduction from "~/pages/index/sections/introduction";
 import WhoAmI from "~/pages/index/sections/who-am-i";
 import Projects from "~/pages/index/sections/projects";
 import ContactMe from "~/pages/index/sections/contact-me";
-import React, {MutableRefObject, useRef} from "react";
-import {LoaderFunction, useLoaderData} from "remix";
+import React, {MutableRefObject, useEffect, useRef} from "react";
+import {ActionFunction, LoaderFunction, useActionData, useLoaderData} from "remix";
 import {Project} from "~/declarations";
 import {animateScroll} from "~/utils/animateScroll";
 import Leaf from '../../public/assets/KP-leaf.png'
+
+export const action: ActionFunction = async ({request}) => {
+    const body = await request.formData();
+
+    return {
+        status: 450,
+        success: false,
+        message: "This service is not yet active. Please, contact me on social media."
+    };
+}
 
 export const loader: LoaderFunction = async () => {
     const projects: Project[] = [
@@ -99,10 +111,11 @@ interface MenuSectionDeclaration {
 
 export default function Index() {
     const {projects} = useLoaderData()
+    const actionData = useActionData()
 
     const scrollTo = (element: HTMLElement, duration = 1000) => {
         const initialPosition = window.scrollY;
-        animateScroll({ targetPosition: element.offsetTop, initialPosition, duration })
+        animateScroll({targetPosition: element.offsetTop, initialPosition, duration})
     }
 
     const sections: Record<string, MenuSectionDeclaration> = {
@@ -128,6 +141,13 @@ export default function Index() {
             }
         }
     };
+
+    useEffect(() => {
+        if (actionData && !actionData.success) {
+            alert(actionData.message)
+        }
+    }, [])
+
 
     return (
         <>

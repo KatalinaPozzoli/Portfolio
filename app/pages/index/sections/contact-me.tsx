@@ -11,7 +11,7 @@ import {
     InnerContainer,
     PortfolioButton
 } from "~/pages/index/index.styled";
-import ContactFormMeImage from '../../../../public/assets/ContactFormMeImage.png'
+import ContactFormMeImage from '../../../../public/assets/KPContactMeImage.png'
 import {forwardRef} from "react";
 
 const ContactMe = forwardRef<HTMLElement>(({}, ref) => {
@@ -23,10 +23,10 @@ const ContactMe = forwardRef<HTMLElement>(({}, ref) => {
                     <FormBodySectionContainer>
                         <ContactMeTitle>Lets Talk!</ContactMeTitle>
                         <ContactMeDescription>I’d love to know about you</ContactMeDescription>
-                        <ContactMeForm>
-                            <ContactMeInput type="text" placeholder="Name"/>
-                            <ContactMeInput type="email" placeholder="Email address"/>
-                            <ContactMeTextarea placeholder="Anything you'd like to tell me..."></ContactMeTextarea>
+                        <ContactMeForm method="post" action="?index">
+                            <ContactMeInput type="text" placeholder="Name" name="name"/>
+                            <ContactMeInput type="email" placeholder="Email address" name="email"/>
+                            <ContactMeTextarea placeholder="Anything you'd like to tell me..." name="message"></ContactMeTextarea>
                             <PortfolioButton type="submit"> Submit </PortfolioButton>
                         </ContactMeForm>
                     </FormBodySectionContainer>

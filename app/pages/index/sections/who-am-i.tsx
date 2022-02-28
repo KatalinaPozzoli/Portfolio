@@ -6,7 +6,7 @@ import {
     WhoAmIDescription,
     WhoAmITitle
 } from "~/pages/index/index.styled";
-import img from '../../../../public/assets/Imagen-ejemplo.png'
+import img from '../../../../public/assets/KPWhoAmI.png'
 import {forwardRef} from "react";
 
 const WhoAmI = forwardRef<HTMLElement>(({}, ref) => {
@@ -16,14 +16,15 @@ const WhoAmI = forwardRef<HTMLElement>(({}, ref) => {
                 <MeImage src={img} alt="katalina-pozzoli-image"/>
                 <AboutMeDescriptionText>
                     <WhoAmITitle>Who am I?</WhoAmITitle>
-                    <WhoAmIDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean odio eros,
-                        sollicitudin id elit sed, tristique vehicula lorem. Cras tristique, urna eget molestie accumsan,
-                        justo ex vulputate lectus, vel facilisis tellus enim ac nibh. Proin ornare eros purus, non
-                        consequat felis placerat quis. Vestibulum sed ullamcorper urna. Etiam feugiat magna justo, et
-                        bibendum nisl finibus sed. Integer quis lobortis diam. Nulla sodales quis elit ac porta.
-                        Suspendisse dignissim velit vitae ultricies euismod. Vivamus ornare est vitae leo ultricies, a
-                        dapibus nunc ornare. Suspendisse lacinia placerat lacus in interdum. Morbi fermentum nibh congue
-                        volutpat dictum.</WhoAmIDescription>
+                    <WhoAmIDescription>
+                        <p>Hi, I'm a User experience designer and web developer based in Argentina. I started two years ago as a web developer using HTML, CSS, JavaScript (more specifically Angular).</p>
+
+                        <p>I got into UI design when a friend of mine asked me to work on the designs of a project she was working on. It pushed my (poor) knowledge limits, so I started learning more in-depth about design principles, patterns, and systems in order to fill those needs. It was that experience that hook me into this world that I fell in love with. And the more I learn, the more I loved it. I haven’t stopped learning since.</p>
+
+                        <p>I took a 13-week UX/UI Bootcamp, and then I joined a UX design community where I took a UI summer marathon, where I developed 14 designs in 14 days. It was an incredible experience where I met a lot of beautiful people that helped me to grow more, especially in what it means to work in a community.</p>
+
+                        <p>Beyond design and development, when I'm not working, I'm probably bouldering or reading about human psychology or reading some utopian sci-fi novel.</p>
+                    </WhoAmIDescription>
                 </AboutMeDescriptionText>
             </AboutMeContainer>
         </AboutMeSection>

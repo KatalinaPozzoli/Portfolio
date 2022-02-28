@@ -78,7 +78,7 @@ export const MenuList = styled.ul`
   align-items: center;
   justify-content: flex-end;
   gap: 1em;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     display: flex;
     font-size: 0.8em;
   }
@@ -156,7 +156,7 @@ export const WelcomeTitle = styled.h1`
   margin-top: 196px;
   margin-bottom: 1em;
   width: 270px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     width: 100%;
   }
 `
@@ -201,7 +201,7 @@ export const AboutMeSection = styled.section`
   margin-top: 2.5em;
   padding: 2em;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     margin-top: 4em;
   }
 `
@@ -209,33 +209,51 @@ export const AboutMeSection = styled.section`
 export const AboutMeContainer = styled(InnerContainer)`
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-  @media screen and (min-width: 768px) {
+  align-items: flex-start;
+  
+  @media screen and (min-width: 769px) {
     flex-direction: row;
   }
 `
 
 export const MeImage = styled.img`
   display: flex;
-  width: 235px;
-  height: auto;
+  flex: 0.5;
+  margin-top: calc(0.83em * 1.5);
+  border-radius: 0.8em;
+  @media screen and (max-width: 768px) {
+    align-self: center;
+  }
 `
 export const AboutMeDescriptionText = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  @media screen and (min-width: 768px) {
+  flex: 1;
+  @media screen and (min-width: 769px) {
     margin-left: 2em;
     max-width: 850px;
   }
 `
 
 export const WhoAmITitle = styled.h2`
+  margin-bottom: 0;
 `
 
-export const WhoAmIDescription = styled.p`
+export const WhoAmIDescription = styled.section`
   margin-top: 0;
+  p {
+    font-size: 1em;
+    line-height: 1.3em;
+    word-spacing: 0.08em;
+  }
+  @media screen and (min-width: 520px){
+    p {
+      font-size: 1em;
+      line-height: 1.5em;
+      word-spacing: 0.1em;
+    }
+  }
 `
 
 //PROJECTS
@@ -278,7 +296,7 @@ export const ContactMeContainer = styled.section`
   margin-right: -2em;
   margin-top: 2.5em;
   padding: 2em;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     margin-top: 4em;
   }
 `
@@ -289,15 +307,17 @@ export const FormBodySectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     margin-left: 2em;
   }
 `
 
 export const ContactMeImage = styled.img`
   display: none;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     display: flex;
+    flex: 1;
+    border-radius: 0.8em;
   }
 `
 
@@ -313,6 +333,7 @@ export const ContactMeForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex: 0.98;
 `
 export const ContactMeInput = styled.input`
   border: #E5E5E5;
