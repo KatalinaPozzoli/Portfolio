@@ -8,11 +8,13 @@ import {
     BehanceIcon,
     BrandFooterTitle,
     BrandTitle,
+    CloseCircle,
     Container,
     DribbleIcon,
     Footer,
     FooterLine,
     GitHubIcon,
+    HamburgerMenu,
     InnerContainer,
     LeafIllustrationLeft,
     LeafIllustrationRight,
@@ -21,13 +23,14 @@ import {
     MenuItemButton,
     MenuList,
     NavBar,
+    NavigationSection,
     SocialMediaLinksContainer
 } from "~/pages/index/index.styled";
 import Introduction from "~/pages/index/sections/introduction";
 import WhoAmI from "~/pages/index/sections/who-am-i";
 import Projects from "~/pages/index/sections/projects";
 import ContactMe from "~/pages/index/sections/contact-me";
-import React, {MutableRefObject, useEffect, useRef} from "react";
+import React, {MutableRefObject, useEffect, useRef, useState} from "react";
 import {ActionFunction, LoaderFunction, useActionData, useLoaderData} from "remix";
 import {Project} from "~/declarations";
 import {animateScroll} from "~/utils/animateScroll";
@@ -74,7 +77,7 @@ export const loader: LoaderFunction = async () => {
         {
             type: 'DESIGN',
             title: 'IfIWere',
-            description: 'Designing and end-to-ent mobile app as a final project of a UX/UI bootcamp',
+            description: 'Designing an end-to-end mobile app as a final project of a UX/UI bootcamp',
             tools: ['UX RESEARCH', 'UX DESIGN', 'UI DESIGN', 'PROTOTYPING', 'USER TESTING', 'FIGMA'],
             image: '/assets/KP-IfIWere-thumbnail.png',
             buttonLabel: 'Read the study case',
@@ -83,7 +86,7 @@ export const loader: LoaderFunction = async () => {
         {
             type: 'DESIGN',
             title: 'Dribble Designs',
-            description: 'Designing DailyUI Challenge to practice',
+            description: 'Designing DailyUI Challenges to practice',
             tools: ['UI DESIGN', 'FIGMA'],
             image: '/assets/KP-DailyUi-thumbnail.png',
             buttonLabel: 'See all the shots',
@@ -94,7 +97,7 @@ export const loader: LoaderFunction = async () => {
             title: 'My portfolio',
             description: 'I designed and developed my own page. I made it on React because i wanted to learn a new JS framework',
             tools: ['FIGMA', 'REMIX', 'REACT', 'TYPESCRIPT', 'HTML', 'CSS'],
-            image: '/assets/IfIWere-thumbnail.png',
+            image: '/assets/KP-portfolio-design.png',
             buttonLabel: 'Try it',
             link: ''
         },
@@ -110,7 +113,7 @@ export const loader: LoaderFunction = async () => {
         {
             type: 'DEVELOPMENT',
             title: 'Tic-Tac-Toe',
-            description: 'This game is one of the most popular, so I wanted to replicate it just to practice',
+            description: 'This game is one of the most popular starter projects.',
             tools: ['ANGULAR 13', 'TYPESCRIPT', 'HTML', 'CSS'],
             image: '/assets/kp-tateti.png',
             buttonLabel: 'Try it',
@@ -119,7 +122,7 @@ export const loader: LoaderFunction = async () => {
         {
             type: 'DEVELOPMENT',
             title: 'To do list',
-            description: 'I made a to-do list in angular to practice, you can see all your tasks, your completed tasks, and even clear the ones that you have already made',
+            description: 'I made a to-do list in angular to practice, you can see all your tasks, completed tasks, and clear the ones that you have already made',
             tools: ['ANGULAR 13', 'TYPESCRIPT', 'HTML', 'CSS'],
             image: '/assets/kp-todo.png',
             buttonLabel: 'Try it',
@@ -141,7 +144,7 @@ export default function Index() {
 
     const scrollTo = (element: HTMLElement, duration = 1000) => {
         const initialPosition = window.scrollY;
-        animateScroll({targetPosition: element.offsetTop, initialPosition, duration})
+        animateScroll({targetPosition: element.offsetTop - 65, initialPosition, duration})
     }
 
     const sections: Record<string, MenuSectionDeclaration> = {
@@ -174,6 +177,7 @@ export default function Index() {
         }
     }, [])
 
+    const [open, setOpen] = useState(false)
 
     return (
         <>
@@ -182,18 +186,33 @@ export default function Index() {
                 <LeafIllustrationRight src={Leaf} alt="leaf-illustration-decoration"></LeafIllustrationRight>
                 <InnerContainer>
                     <NavBar>
-                        <BrandTitle>Katalina Pozzoli</BrandTitle>
-                        <MenuList>
-                            {Object.values(sections).map(({label, action, relatedRef}) =>
-                                (
-                                    <MenuItem key={`section-${label}`}>
-                                        <MenuItemButton onClick={() => action(relatedRef?.current)}>
-                                            {label}
-                                        </MenuItemButton>
-                                    </MenuItem>
-                                )
-                            )}
-                        </MenuList>
+                        <div className="navbar__container">
+                            <BrandTitle>Katalina Pozzoli</BrandTitle>
+                            {open ?
+                                <CloseCircle className="close-icon" onClick={() => {
+                                    setOpen(!open)
+                                }}> </CloseCircle> :
+                                <HamburgerMenu onClick={() => {
+                                    setOpen(!open)
+                                }}></HamburgerMenu>
+                            }
+                        </div>
+                        <NavigationSection open={open}>
+                            <MenuList open={open}>
+                                {Object.values(sections).map(({label, action, relatedRef}) =>
+                                    (
+                                        <MenuItem key={`section-${label}`}>
+                                            <MenuItemButton onClick={() => {
+                                                setOpen(false)
+                                                action(relatedRef?.current)
+                                            }}>
+                                                {label}
+                                            </MenuItemButton>
+                                        </MenuItem>
+                                    )
+                                )}
+                            </MenuList>
+                        </NavigationSection>
                     </NavBar>
                 </InnerContainer>
                 <Introduction/>

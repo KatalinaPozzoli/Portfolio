@@ -1,6 +1,7 @@
 import styled, {css} from "styled-components";
 import {HiMenuAlt3} from 'react-icons/hi';
-import {FaBehanceSquare, FaDribbble, FaGithub, FaLinkedin} from "react-icons/fa";
+import {FaBehanceSquare, FaDribbble, FaGithub, FaLinkedin } from "react-icons/fa";
+import {IoIosCloseCircle} from "react-icons/io"
 
 //COMMONS
 export const LeafIllustrationLeft = styled.img`
@@ -12,9 +13,9 @@ export const LeafIllustrationLeft = styled.img`
     top: 0;
     left: 2em;
   }
-  @media screen and (min-width: 1920px) {
-    left: 10em;
+  @media screen and (min-width: 1700px) {
     height: 35em;
+    left: 10em;
   }
 `
 export const LeafIllustrationRight = styled.img`
@@ -56,29 +57,85 @@ export const InnerContainer = styled.section`
   max-width: 1040px;
   width: 100%;
   margin: 0 auto;
+  position:relative;
+  display: block;
 `
 //NAVBAR
 export const NavBar = styled.nav`
-  height: 40px;
+  position: fixed;
+  width: 100%;
+  height: 65px;
+  top: 0;
+  right: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
+  
+  .navbar__container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 1em;
+    box-sizing: border-box;
+    background-color: rgb(255,255,255, 0.9);
+    backdrop-filter: blur(2px);
+    position: relative;
+    z-index: 1;
+  }
+  
+  @media screen and (min-width: 768px){
+    position: relative;
+    justify-content: space-between;
+  }
 `
 
 export const BrandTitle = styled.h1`
   font-size: 1.5em;
   font-family: var(--font-brand);
   flex: 1;
+  margin: 0;
 `
+export const NavigationSection = styled.section<{open: boolean}>`
+  transition: top .3s;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(2px);
+  z-index: 0;
+  
+  .close-icon {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 1;
+  }
 
-export const MenuList = styled.ul`
-  display: none;
-  list-style: none;
+  @media screen and (max-width: 768px){
+    position: absolute;
+    top: ${(props: any) => props.open ? "64px" : "-500%"};
+    //top: 0;
+    left: 0;
+    right: 0;
+    padding: 1em 0;
+  }
+`
+export const MenuList = styled.ul<{open: boolean}>`
   flex: 1;
   width: 100%;
   align-items: center;
   justify-content: flex-end;
   gap: 1em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  @media screen and (max-width: 768px){
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
   @media screen and (min-width: 769px) {
+    position: static;
     display: flex;
     font-size: 0.8em;
   }
@@ -117,6 +174,10 @@ export const MenuItem = styled.li`
   &:before {
     left: 50%
   }
+  
+  @media screen and (max-width: 768px){
+    display: inline-flex;
+  }
 `
 
 export const MenuItemButton = styled.button`
@@ -127,6 +188,7 @@ export const MenuItemButton = styled.button`
   outline: none;
   border: none;
   color: inherit;
+  
 `
 
 //FOOTER
@@ -177,9 +239,19 @@ export const SocialMediaLinksContainer = styled.section`
 export const HamburgerMenu = styled(HiMenuAlt3)`
   ${DynamicIcon};
   color: var(--primary-dark);
-
+  display: flex;
+  @media screen and (min-width: 769px){
+    display: none;
+  }
 `
-
+export const CloseCircle = styled(IoIosCloseCircle)`
+  ${DynamicIcon};
+  color: var(--primary-dark);
+  display: flex;
+  @media screen and (min-width: 769px){
+    display: none;
+  }
+`
 export const LinkedInIcon = styled(FaLinkedin)`
   ${DynamicIcon};
 `
@@ -302,6 +374,7 @@ export const ContactMeContainer = styled.section`
 `
 export const FormSectionContainer = styled.section`
   display: flex;
+  align-items: flex-start;
 `
 export const FormBodySectionContainer = styled.section`
   display: flex;
