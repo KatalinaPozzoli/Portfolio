@@ -148,8 +148,22 @@ export const MenuList = styled.ul<{open: boolean}>`
 export const MenuItem = styled.li`
   height: 100%;
   position: relative;
+  
+  @media screen and (max-width: 768px){
+    display: inline-flex;
+  }
+`
 
-  &:hover, &.active {
+export const MenuItemButton = styled.button`
+  font-size: 1em;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  background: none;
+  outline: none;
+  border: none;
+  color: inherit;
+
+  &:hover, &.active, &:focus {
     color: var(--accent-dark);
 
     &:after, &:before {
@@ -174,22 +188,8 @@ export const MenuItem = styled.li`
   &:before {
     left: 50%
   }
-  
-  @media screen and (max-width: 768px){
-    display: inline-flex;
-  }
 `
 
-export const MenuItemButton = styled.button`
-  font-size: 1em;
-  font-family: var(--font-heading);
-  cursor: pointer;
-  background: none;
-  outline: none;
-  border: none;
-  color: inherit;
-  
-`
 
 //FOOTER
 export const Footer = styled.footer`
