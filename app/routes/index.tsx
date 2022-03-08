@@ -88,7 +88,7 @@ export const loader: LoaderFunction = async () => {
             title: 'Dribble Designs',
             description: 'Designing DailyUI Challenges to practice',
             tools: ['UI DESIGN', 'FIGMA'],
-            image: '/assets/KP-DailyUi-thumbnail.png',
+            image: '/assets/KP-DailyCollectionImage.png',
             buttonLabel: 'See all the shots',
             link: 'https://dribbble.com/KatitaP'
         },
