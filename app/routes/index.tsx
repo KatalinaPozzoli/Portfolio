@@ -99,7 +99,7 @@ export const loader: LoaderFunction = async () => {
             tools: ['FIGMA', 'REMIX', 'REACT', 'TYPESCRIPT', 'HTML', 'CSS'],
             image: '/assets/KP-portfolio-design.png',
             buttonLabel: 'Try it',
-            link: ''
+            link: 'https://katalinapozzoli.com/'
         },
         {
             type: 'DEVELOPMENT',
@@ -108,7 +108,7 @@ export const loader: LoaderFunction = async () => {
             tools: ['ANGULAR 13', 'TYPESCRIPT', 'HTML', 'CSS'],
             image: '/assets/kp-budget-calculator.png',
             buttonLabel: 'Try it',
-            link: ''
+            link: 'https://projects.katalinapozzoli.com/budget'
         },
         {
             type: 'DEVELOPMENT',
@@ -117,7 +117,7 @@ export const loader: LoaderFunction = async () => {
             tools: ['ANGULAR 13', 'TYPESCRIPT', 'HTML', 'CSS'],
             image: '/assets/kp-tateti.png',
             buttonLabel: 'Try it',
-            link: ''
+            link: 'https://projects.katalinapozzoli.com/tic-tac-toe'
         },
         {
             type: 'DEVELOPMENT',
@@ -126,7 +126,7 @@ export const loader: LoaderFunction = async () => {
             tools: ['ANGULAR 13', 'TYPESCRIPT', 'HTML', 'CSS'],
             image: '/assets/kp-todo.png',
             buttonLabel: 'Try it',
-            link: ''
+            link: 'https://projects.katalinapozzoli.com/todo-list'
         },
     ]
     return {projects}
