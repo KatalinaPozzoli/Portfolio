@@ -77,7 +77,7 @@ export const loader: LoaderFunction = async () => {
         {
             type: 'DESIGN',
             title: 'IfIWere',
-            description: 'Designing an end-to-end mobile app as a final project of a UX/UI bootcamp',
+            description: 'Design of an end-to-end mobile application as a final project of a UX/UI bootcamp',
             tools: ['UX RESEARCH', 'UX DESIGN', 'UI DESIGN', 'PROTOTYPING', 'USER TESTING', 'FIGMA'],
             image: '/assets/KP-IfIWere-thumbnail.png',
             buttonLabel: 'Read the study case',
@@ -85,8 +85,26 @@ export const loader: LoaderFunction = async () => {
         },
         {
             type: 'DESIGN',
+            title: 'Estación Vertical',
+            description: 'Redesign of a landing page',
+            tools: ['UX RESEARCH', 'UX DESIGN', 'UI DESIGN', 'UX WRITING', 'FIGMA'],
+            image: '/assets/EstacionVertical.png',
+            buttonLabel: 'Read the study case',
+            link: 'https://www.behance.net/gallery/141330771/Case-Study-Estacion-Vertical/modules/798509173'
+        },
+        {
+            type: 'DESIGN',
+            title: 'BudgTravel',
+            description: 'Design a travel budget app for a UX challenge',
+            tools: ['UX RESEARCH', 'UX DESIGN', 'UI DESIGN', 'PROTOTYPING', 'FIGMA'],
+            image: '/assets/BudgTravel.png',
+            buttonLabel: 'Read the study case',
+            link: 'https://www.behance.net/gallery/142018277/Case-Study-BudgTravel'
+        },
+        {
+            type: 'DESIGN',
             title: 'Dribble Designs',
-            description: 'Designing DailyUI Challenges to practice',
+            description: 'Daily UI design challenges to practice',
             tools: ['UI DESIGN', 'FIGMA'],
             image: '/assets/KP-DailyCollectionImage.png',
             buttonLabel: 'See all the shots',
