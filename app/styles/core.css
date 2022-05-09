@@ -1,19 +1,20 @@
 :root {
-    --primary-dark: #50674b;
-    --primary-base: #aab8ae;
-    --primary-light: #eaede7;
+    --primary-light: #556182;
+    --primary-base: #CDDAFD;
+    --primary-dark: #E0E8FE;
 
-    --accent-dark: #b24e37;
-    --accent-base: #e2d3c4;
-    --accent-light: #f2e9e3;
+    --accent-light: #DEF2DF;
+    --accent-base: #A7DCAB;
+    --accent-dark: #5B795E;
+
 
     --text-regular: #333333;
     --text-accent: var(--primary-base);
     --text-light: #9a9a9f;
 
     --font-brand: 'Reenie Beanie', cursive;
-    --font-body: 'Montserrat', sans-serif, monospace;
-    --font-heading: 'Kaisei Decol', serif, monospace;
+    --font-body: 'Lato', sans-serif;
+    --font-heading: 'Merriweather', serif;
 }
 
 body {
