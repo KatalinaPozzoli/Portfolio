@@ -8,7 +8,7 @@ import {
 } from "remix";
 import type { MetaFunction } from "remix";
 
-import coreStyles from '~/styles/core.css';
+import coreStyles from '~/src/styles/core.css';
 
 export const meta: MetaFunction = () => {
   return { title: "Katalina Pozzoli Portfolio" };

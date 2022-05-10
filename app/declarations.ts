@@ -7,3 +7,9 @@ export interface Project {
     buttonLabel: string;
     link: string;
 }
+
+export interface SocialMedia {
+    icon: string;
+    link: string;
+    linkDescription: string;
+}

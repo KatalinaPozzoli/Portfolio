@@ -5,8 +5,10 @@
 // Render => export default
 
 import React from "react";
-import Presentation from "~/Sections/presentation";
+import Presentation from "~/routes-sections/index/presentation";
 import styled from "styled-components";
+import Projects from "~/routes-sections/index/projects";
+import {SocialMediaList} from "~/src/values";
 
 const SPortfolio = styled.section`
   padding: 1.5em;
@@ -15,23 +17,20 @@ const SPortfolio = styled.section`
     display: flex;
     width: 100%;
     justify-content: space-between;
-
-    button{
-      border: none;
-      background-color: white;
-    }
-  }
-  
-  .me-image{
-    margin-top: 2.5em;
   }
   
   .brand-name{
     font-family: var(--font-brand);
   }
+
+  .me-image{
+    width: 100%;
+    margin: 2.5em auto;
+  }
 `
 
 export default function Index() {
+    const socialMedia = SocialMediaList;
     return (
         <SPortfolio>
             <nav>
@@ -40,8 +39,9 @@ export default function Index() {
                     <img src="/assets/Menu_Alt_01.svg" alt="menu-button"/>
                 </button>
             </nav>
-            <Presentation></Presentation>
+            <Presentation socialMedia={socialMedia}></Presentation>
             <img className="me-image" src="/assets/me-image.png" alt="katalina pozzoli image"/>
+            <Projects></Projects>
         </SPortfolio>
     )
 }
