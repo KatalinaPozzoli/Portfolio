@@ -44,6 +44,8 @@ p {
 button {
     border: none;
     background-color: white;
+    font-family: var(--font-body);
+    font-weight: 700;
 }
 
 .highlight--pen, .highlight {

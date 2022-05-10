@@ -1,6 +1,6 @@
 import {Project, SocialMedia} from "~/declarations";
 
-export const projects: Project[] = [
+export const projectsList: Project[] = [
     {
         type: 'DESIGN',
         title: 'IfIWere',

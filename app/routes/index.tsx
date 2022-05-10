@@ -8,7 +8,7 @@ import React from "react";
 import Presentation from "~/routes-sections/index/presentation";
 import styled from "styled-components";
 import Projects from "~/routes-sections/index/projects";
-import {SocialMediaList} from "~/src/values";
+import {projectsList, SocialMediaList} from "~/src/values";
 
 const SPortfolio = styled.section`
   padding: 1.5em;
@@ -30,7 +30,6 @@ const SPortfolio = styled.section`
 `
 
 export default function Index() {
-    const socialMedia = SocialMediaList;
     return (
         <SPortfolio>
             <nav>
@@ -39,9 +38,9 @@ export default function Index() {
                     <img src="/assets/Menu_Alt_01.svg" alt="menu-button"/>
                 </button>
             </nav>
-            <Presentation socialMedia={socialMedia}></Presentation>
+            <Presentation socialMedia={SocialMediaList}></Presentation>
             <img className="me-image" src="/assets/me-image.png" alt="katalina pozzoli image"/>
-            <Projects></Projects>
+            <Projects projects={projectsList}></Projects>
         </SPortfolio>
     )
 }
