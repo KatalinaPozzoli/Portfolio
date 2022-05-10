@@ -1,7 +1,7 @@
 :root {
-    --primary-light: #556182;
+    --primary-light: #E0E8FE;
     --primary-base: #CDDAFD;
-    --primary-dark: #E0E8FE;
+    --primary-dark: #556182;
 
     --accent-light: #DEF2DF;
     --accent-base: #A7DCAB;
@@ -19,14 +19,18 @@
 
 body {
     margin: 0;
+    background-image: radial-gradient(#eaeaea 1px, transparent 0);
+    background-size: 24px 24px;
 }
 h1, h2, h3, h4, h5, h6 {
+    margin: 0;
     font-family: var(--font-heading);
     font-weight: 300;
     color: #333333;
 }
 
 p {
+    margin: 0;
     font-family: var(--font-body);
     font-weight: 300;
     color: #333333;
