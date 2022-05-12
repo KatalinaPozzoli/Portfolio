@@ -6,9 +6,35 @@ import {SocialMedia} from "~/declarations";
 const PresentationStyles = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 1.4em;
-  h1{
+  align-items: start;
+  justify-content: space-between;
+
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+  }
+
+  .presentation {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4em;
+      @media screen and (min-width: 600px) {
+        margin-top: 10em;
+        max-width: 720px;
+        margin-right: 2em;
+      }
+    }
+   
+  }
+
+  h1 {
     font-size: 1.5em;
+  }
+
+  .me-image {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 2.5em;
   }
 `
 
@@ -19,13 +45,16 @@ interface PresentationProps {
 const Presentation = ({socialMedia}: PresentationProps) => {
     return (
         <PresentationStyles>
-            <h1> Hey there, <span className="highlight--pen"> I’m Katalina! </span></h1>
-            <p>I'm a UX Designer and web developer.
-                My goal is to be able to combine both disciplines to design and develop meaningful, usable and
-                accessible experiences.
-                You can check out my work below.
-            </p>
-            <SocialMediaList items={socialMedia}/>
+            <div className="presentation__content">
+                <h1> Hey there, <span className="highlight--pen"> I’m Katalina! </span></h1>
+                <p>I'm a UX Designer and web developer.
+                    My goal is to be able to combine both disciplines to design and develop meaningful, usable and
+                    accessible experiences.
+                    You can check out my work below.
+                </p>
+                <SocialMediaList items={socialMedia}/>
+            </div>
+            <img className="me-image" src="/assets/me-image.png" alt="katalina pozzoli image"/>
         </PresentationStyles>
     );
 };

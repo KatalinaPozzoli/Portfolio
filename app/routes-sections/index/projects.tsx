@@ -7,6 +7,7 @@ const SProjects = styled.section`
   display: flex;
   flex-direction: column;
   gap: 1em;
+  margin-top: 2.5em;
   h1{
     width: fit-content;
     font-size: 1.5em;

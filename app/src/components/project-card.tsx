@@ -13,11 +13,15 @@ const Container = styled.section`
   transition: box-shadow .6s;
   box-shadow: 0 2px 8px rgba(170, 184, 174, 0.3);
   gap: 1em;
-  max-width: 400px;
+  max-width: 300px;
   min-height: 470px;
   @media screen and (min-width: 600px){
     height: 520px;
   }
+  @media screen and (min-width: 850px){
+    max-width: 370px;
+  }
+  
 
 
   :hover {

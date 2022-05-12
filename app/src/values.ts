@@ -77,31 +77,31 @@ export const projectsList: Project[] = [
 
 export const SocialMediaList: SocialMedia[] = [
     {
-        icon: '/assets/mail-icon.svg',
+        icon: '/assets/icons/mail-icon.svg',
         label: 'Katalinapozzoli2000@gmail.com',
         link: 'mailto:katalinapozzoli2000@gmail.com',
         linkDescription: 'mail icon'
     },
     {
-        icon: '/assets/linkedin-icon.svg',
+        icon: '/assets/icons/linkedin-icon.svg',
         label: 'linkedin.com/in/katalina-pozzoli/',
         link: 'https://www.linkedin.com/in/katalina-pozzoli/',
         linkDescription: 'linkedin icon'
     },
     {
-        icon: '/assets/behance-icon.svg',
+        icon: '/assets/icons/behance-icon.svg',
         label: 'behance.net/katalinaPozzoli',
         link: 'https://www.behance.net/katalinaPozzoli',
         linkDescription: 'behance icon'
     },
     {
-        icon: '/assets/dribble-icon.svg',
+        icon: '/assets/icons/dribble-icon.svg',
         label: 'dribbble.com/KatitaP',
         link: 'https://dribbble.com/KatitaP',
         linkDescription: 'dribble icon'
     },
     {
-        icon: '/assets/github-icon.svg',
+        icon: '/assets/icons/github-icon.svg',
         label: 'github.com/katalinaPozzoli',
         link: 'https://github.com/KatalinaPozzoli',
         linkDescription: 'github icon'
