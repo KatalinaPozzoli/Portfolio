@@ -6,7 +6,10 @@ import {SocialMedia} from "~/declarations";
 const PresentationStyles = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 1.4em;
+  h1{
+    font-size: 1.5em;
+  }
 `
 
 interface PresentationProps {

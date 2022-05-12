@@ -10,6 +10,7 @@ export interface Project {
 
 export interface SocialMedia {
     icon: string;
+    label: string;
     link: string;
     linkDescription: string;
 }

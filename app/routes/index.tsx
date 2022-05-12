@@ -9,6 +9,7 @@ import Presentation from "~/routes-sections/index/presentation";
 import styled from "styled-components";
 import Projects from "~/routes-sections/index/projects";
 import {projectsList, SocialMediaList} from "~/src/values";
+import ContactMe from "~/routes-sections/index/contact-me";
 
 const SPortfolio = styled.section`
   padding: 1.5em;
@@ -41,6 +42,7 @@ export default function Index() {
             <Presentation socialMedia={SocialMediaList}></Presentation>
             <img className="me-image" src="/assets/me-image.png" alt="katalina pozzoli image"/>
             <Projects projects={projectsList}></Projects>
+            <ContactMe items={SocialMediaList}></ContactMe>
         </SPortfolio>
     )
 }

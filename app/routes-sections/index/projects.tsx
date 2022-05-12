@@ -9,6 +9,7 @@ const SProjects = styled.section`
   gap: 1em;
   h1{
     width: fit-content;
+    font-size: 1.5em;
   }
   .project-modifier{
     &__container{
@@ -24,6 +25,14 @@ const SProjects = styled.section`
         background-color: var(--accent-base);
       }
       background-color: var(--accent-light);
+    }
+  }
+  .projects__container{
+    @media screen and (min-width: 768px){
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 `
@@ -51,8 +60,10 @@ const Projects = ({projects}: ProjectsProps) => {
                     DEVELOPMENT
                 </button>
             </div>
-            {projects.filter((p) => p.type === activeType).map((project, index) => <ProjectCard
-                key={`project-${index}`} project={project}/>)}
+            <div className="projects__container">
+                {projects.filter((p) => p.type === activeType).map((project, index) => <ProjectCard
+                    key={`project-${index}`} project={project}/>)}
+            </div>
         </SProjects>
     );
 };

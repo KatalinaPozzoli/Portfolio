@@ -3,30 +3,30 @@ import {Project, SocialMedia} from "~/declarations";
 export const projectsList: Project[] = [
     {
         type: 'DESIGN',
-        title: 'IfIWere',
-        description: 'Design of an end-to-end mobile application as a final project of a UX/UI bootcamp',
-        tools: ['UX RESEARCH', 'UX DESIGN', 'UI DESIGN', 'PROTOTYPING', 'USER TESTING', 'FIGMA'],
-        image: '/assets/KP-IfIWere-thumbnail.png',
+        title: 'BudgTravel',
+        description: 'Design a travel budget app for a UX challenge',
+        tools: ['UX RESEARCH', 'UI DESIGN', 'PROTOTYPING', 'FIGMA'],
+        image: '/assets/BudgTravel.png',
         buttonLabel: 'Read the study case',
-        link: 'https://www.behance.net/gallery/134652681/IfIWere'
+        link: 'https://www.behance.net/gallery/142018277/Case-Study-BudgTravel'
     },
     {
         type: 'DESIGN',
         title: 'Estación Vertical',
         description: 'Redesign of a landing page',
-        tools: ['UX RESEARCH', 'UX DESIGN', 'UI DESIGN', 'UX WRITING', 'FIGMA'],
+        tools: ['UX WRITING', 'UX RESEARCH', 'UI DESIGN', 'FIGMA'],
         image: '/assets/EstacionVertical.png',
         buttonLabel: 'Read the study case',
         link: 'https://www.behance.net/gallery/141330771/Case-Study-Estacion-Vertical/modules/798509173'
     },
     {
         type: 'DESIGN',
-        title: 'BudgTravel',
-        description: 'Design a travel budget app for a UX challenge',
-        tools: ['UX RESEARCH', 'UX DESIGN', 'UI DESIGN', 'PROTOTYPING', 'FIGMA'],
-        image: '/assets/BudgTravel.png',
+        title: 'IfIWere',
+        description: 'Design of an end-to-end mobile application as a final project of a UX/UI bootcamp',
+        tools: ['UX RESEARCH', 'UI DESIGN', 'PROTOTYPING', 'USER TESTING', 'FIGMA'],
+        image: '/assets/KP-IfIWere-thumbnail.png',
         buttonLabel: 'Read the study case',
-        link: 'https://www.behance.net/gallery/142018277/Case-Study-BudgTravel'
+        link: 'https://www.behance.net/gallery/134652681/IfIWere'
     },
     {
         type: 'DESIGN',
@@ -75,10 +75,35 @@ export const projectsList: Project[] = [
     },
 ]
 
-export const SocialMediaList : SocialMedia[] = [
-    {icon: '/assets/mail-icon.svg', link: 'mailto:katalinapozzoli2000@gmail.com', linkDescription: 'mail icon'},
-    {icon: '/assets/linkedin-icon.svg', link: 'https://www.linkedin.com/in/katalina-pozzoli/', linkDescription: 'linkedin icon'},
-    {icon: '/assets/behance-icon.svg', link: 'https://www.behance.net/katalinaPozzoli', linkDescription: 'behance icon'},
-    {icon: '/assets/dribble-icon.svg', link: 'https://dribbble.com/KatitaP', linkDescription: 'dribble icon'},
-    {icon: '/assets/github-icon.svg', link: 'https://github.com/KatalinaPozzoli', linkDescription: 'github icon'},
+export const SocialMediaList: SocialMedia[] = [
+    {
+        icon: '/assets/mail-icon.svg',
+        label: 'Katalinapozzoli2000@gmail.com',
+        link: 'mailto:katalinapozzoli2000@gmail.com',
+        linkDescription: 'mail icon'
+    },
+    {
+        icon: '/assets/linkedin-icon.svg',
+        label: 'linkedin.com/in/katalina-pozzoli/',
+        link: 'https://www.linkedin.com/in/katalina-pozzoli/',
+        linkDescription: 'linkedin icon'
+    },
+    {
+        icon: '/assets/behance-icon.svg',
+        label: 'behance.net/katalinaPozzoli',
+        link: 'https://www.behance.net/katalinaPozzoli',
+        linkDescription: 'behance icon'
+    },
+    {
+        icon: '/assets/dribble-icon.svg',
+        label: 'dribbble.com/KatitaP',
+        link: 'https://dribbble.com/KatitaP',
+        linkDescription: 'dribble icon'
+    },
+    {
+        icon: '/assets/github-icon.svg',
+        label: 'github.com/katalinaPozzoli',
+        link: 'https://github.com/KatalinaPozzoli',
+        linkDescription: 'github icon'
+    },
 ]
