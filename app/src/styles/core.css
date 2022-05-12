@@ -28,6 +28,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 300;
     color: #333333;
+    letter-spacing: 0.03em;
 }
 
 p {
@@ -35,6 +36,7 @@ p {
     font-family: var(--font-body);
     font-weight: 300;
     color: #333333;
+    letter-spacing: 0.03em;
 }
 
 .brand-font {
