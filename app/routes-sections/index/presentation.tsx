@@ -25,7 +25,7 @@ const Presentation = ({socialMedia}: PresentationProps) => {
                 accessible experiences.
                 You can check out my work below.
             </p>
-            <SocialMediaList items={socialMedia}></SocialMediaList>
+            <SocialMediaList items={socialMedia}/>
         </PresentationStyles>
     );
 };
