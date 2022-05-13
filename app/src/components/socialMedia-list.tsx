@@ -9,6 +9,7 @@ const SocialMediaStyles = styled.ul`
   padding: 0;
   gap: 1em;
   align-items: center;
+  box-sizing: border-box;
 `
 
 interface SocialMediaProps {

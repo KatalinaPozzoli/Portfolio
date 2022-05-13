@@ -1,12 +1,9 @@
 import React from 'react';
 import styled from "styled-components";
 import {SocialMedia} from "~/declarations";
+import ConstrainedContainer from "../../src/components/content-constraint";
 
 const ContactMeStyles = styled.section`
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  margin-top: 2.5em;
 
   h1 {
     width: fit-content;
@@ -22,6 +19,8 @@ const ContactMeStyles = styled.section`
         display: flex;
         flex-direction: column;
         gap: 1em;
+        padding: 0.5em;
+        box-sizing: border-box;
       }
       &-list{
         display: flex;
@@ -33,8 +32,23 @@ const ContactMeStyles = styled.section`
         align-items: center;
         gap: 1em;
       }
+
+      &-label {
+        font-size: 0.8em;
+
+        @media (min-width: 320px) {
+          font-size: 1em;
+        }
+      }
     }
   }
+`
+const Container = styled(ConstrainedContainer)`
+  display: flex;
+  width: 100%;
+  gap: 2em;
+  justify-content: space-between;
+  margin-top: 5em;
 `
 
 interface ContactMeProps {

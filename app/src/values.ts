@@ -40,7 +40,7 @@ export const projectsList: Project[] = [
     {
         type: 'DEVELOPMENT',
         title: 'My portfolio',
-        description: 'I designed and developed my own page. I made it on React because i wanted to learn a new JS framework',
+        description: 'I designed and developed my own page. I made it on React because I wanted to learn a new JS framework',
         tools: ['FIGMA', 'REMIX', 'REACT', 'TYPESCRIPT', 'HTML', 'CSS'],
         image: '/assets/KP-portfolio-design.png',
         buttonLabel: 'Try it',
@@ -84,25 +84,25 @@ export const SocialMediaList: SocialMedia[] = [
     },
     {
         icon: '/assets/icons/linkedin-icon.svg',
-        label: 'linkedin.com/in/katalina-pozzoli/',
+        label: 'Linkedin.com/in/katalina-pozzoli/',
         link: 'https://www.linkedin.com/in/katalina-pozzoli/',
         linkDescription: 'linkedin icon'
     },
     {
         icon: '/assets/icons/behance-icon.svg',
-        label: 'behance.net/katalinaPozzoli',
+        label: 'Behance.net/katalinaPozzoli',
         link: 'https://www.behance.net/katalinaPozzoli',
         linkDescription: 'behance icon'
     },
     {
         icon: '/assets/icons/dribble-icon.svg',
-        label: 'dribbble.com/KatitaP',
+        label: 'Dribbble.com/KatitaP',
         link: 'https://dribbble.com/KatitaP',
         linkDescription: 'dribble icon'
     },
     {
         icon: '/assets/icons/github-icon.svg',
-        label: 'github.com/katalinaPozzoli',
+        label: 'Github.com/katalinaPozzoli',
         link: 'https://github.com/KatalinaPozzoli',
         linkDescription: 'github icon'
     },

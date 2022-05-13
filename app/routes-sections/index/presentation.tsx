@@ -18,10 +18,11 @@ const PresentationStyles = styled.section`
       display: flex;
       flex-direction: column;
       gap: 1.4em;
+    justify-content: center;
       @media screen and (min-width: 600px) {
-        margin-top: 10em;
         max-width: 720px;
-        margin-right: 2em;
+      }
+      @media screen and (min-width: 1280px) {
       }
     }
    
@@ -32,9 +33,18 @@ const PresentationStyles = styled.section`
   }
 
   .me-image {
-    width: 100%;
     max-width: 400px;
-    margin-top: 2.5em;
+  }
+`
+
+const Container = styled(ConstrainedContainer)`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
   }
 `
 

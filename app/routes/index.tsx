@@ -14,7 +14,8 @@ import NavigationBar from "~/src/components/navigation-bar";
 import Footer from "~/src/components/footer";
 
 const SPortfolio = styled.section`
-  padding: 1.5em 1.5em 0 1.5em;
+  padding: 2em 2em 0 2em;
+  box-sizing: border-box;
 `
 
 export default function Index() {
