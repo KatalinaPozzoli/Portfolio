@@ -8,9 +8,11 @@ const PresentationStyles = styled.section`
   flex-direction: column;
   align-items: start;
   justify-content: space-between;
+  margin-top: 4em;
 
   @media screen and (min-width: 600px) {
     flex-direction: row;
+    margin-top: 3em;
   }
 
   .presentation {
@@ -18,11 +20,12 @@ const PresentationStyles = styled.section`
       display: flex;
       flex-direction: column;
       gap: 1.4em;
-    justify-content: center;
+      justify-content: center;
+      margin-bottom: 1.5em;
       @media screen and (min-width: 600px) {
         max-width: 720px;
-      }
-      @media screen and (min-width: 1280px) {
+        margin-bottom: 0;
+        margin-right: 1.5em;
       }
     }
    

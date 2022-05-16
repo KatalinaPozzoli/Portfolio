@@ -39,7 +39,11 @@ p {
     letter-spacing: 0.03em;
     font-size: 1em;
 }
-
+li, ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 @media screen and (min-width: 700px) {
     p{
         font-size:  1.2em;

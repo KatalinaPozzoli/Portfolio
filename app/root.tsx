@@ -9,6 +9,9 @@ import {
 import type { MetaFunction } from "remix";
 
 import coreStyles from '~/src/styles/core.css';
+import NavigationBar from "~/src/components/navigation-bar";
+import Footer from "~/src/components/footer";
+import {SocialMediaList} from "~/src/values";
 
 export const meta: MetaFunction = () => {
   return { title: "Katalina Pozzoli Portfolio" };
@@ -36,7 +39,13 @@ export default function App() {
             : null}
       </head>
       <body>
+      <header>
+        <NavigationBar/>
+      </header>
         <Outlet />
+      <footer>
+        <Footer socialMedia={SocialMediaList}/>
+      </footer>
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}

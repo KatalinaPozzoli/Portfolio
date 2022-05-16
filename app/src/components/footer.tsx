@@ -5,8 +5,6 @@ import SocialMediaList from "~/src/components/socialMedia-list";
 
 const FooterStyles = styled.footer`
   background-color: var(--primary-base);
-  margin-left: -2em;
-  margin-right: -2em;
   margin-top: 4em;
   padding: 1em;
   box-sizing: border-box;

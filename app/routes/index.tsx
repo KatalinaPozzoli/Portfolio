@@ -10,8 +10,6 @@ import styled from "styled-components";
 import Projects from "~/routes-sections/index/projects";
 import {projectsList, SocialMediaList} from "~/src/values";
 import ContactMe from "~/routes-sections/index/contact-me";
-import NavigationBar from "~/src/components/navigation-bar";
-import Footer from "~/src/components/footer";
 
 const SPortfolio = styled.section`
   padding: 2em 2em 0 2em;
@@ -21,11 +19,9 @@ const SPortfolio = styled.section`
 export default function Index() {
     return (
         <SPortfolio>
-            <NavigationBar/>
             <Presentation socialMedia={SocialMediaList}/>
             <Projects projects={projectsList}/>
             <ContactMe items={SocialMediaList}/>
-            <Footer socialMedia={SocialMediaList}/>
         </SPortfolio>
     )
 }
