@@ -1,4 +1,4 @@
-import {Project, SocialMedia} from "~/declarations";
+import {MenuSection, Project, SocialMedia} from "~/declarations";
 
 export const projectsList: Project[] = [
     {
@@ -107,3 +107,34 @@ export const SocialMediaList: SocialMedia[] = [
         linkDescription: 'github icon'
     },
 ]
+
+export const MenuSections: MenuSection[] = [
+    {
+        label: 'Home',
+        link: '/'
+    },
+    {
+        label: 'About Me',
+        link: 'about-me'
+    },
+    {
+        label: 'Projects',
+        link: '#projects'
+    },
+    {
+        label: 'Contact',
+        link: '#contact'
+    },
+    {
+        label: 'Resume',
+        link: '#contact'
+    },
+]
+
+export const Breakpoints = {
+    DESKTOP: '1181px'
+}
+
+export const BreakpointValues = {
+    DESKTOP: 1181
+}

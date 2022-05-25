@@ -14,3 +14,8 @@ export interface SocialMedia {
     link: string;
     linkDescription: string;
 }
+
+export interface MenuSection {
+    label: string;
+    link: string;
+}

@@ -76,13 +76,14 @@ const Projects = ({projects}: ProjectsProps) => {
                     <button
                         className={`project-modifier__button ${activeType === 'DEVELOPMENT' ? 'project-modifier__button--active' : ''}`}
                         onClick={() => handleStateChange('DEVELOPMENT')}>
-                    DEVELOPMENT
-                </button>
-            </div>
-            <div className="projects__container">
-                {projects.filter((p) => p.type === activeType).map((project, index) => <ProjectCard
-                    key={`project-${index}`} project={project}/>)}
-            </div>
+                        DEVELOPMENT
+                    </button>
+                </div>
+                <div className="projects__container">
+                    {projects.filter((p) => p.type === activeType).map((project, index) => <ProjectCard
+                        key={`project-${index}`} project={project}/>)}
+                </div>
+            </Container>
         </SProjects>
     );
 };

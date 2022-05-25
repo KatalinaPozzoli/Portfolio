@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from "styled-components";
 import ConstrainedContainer from "~/src/components/content-constraint";
-import {MenuSections} from "~/src/values";
+import {Breakpoints, MenuSections} from "~/src/values";
+import {useWindowWidth} from "~/src/effects/useWindowWidth";
 
 const NavStyles = styled.nav`
   .brand-name {
@@ -21,24 +22,40 @@ const BrandBar = styled.section`
   border-bottom: 1px solid var(--decorative-gray);
   background: white;
   box-shadow: 0 0 10px 0 #e4e4e4;
-  
+
   &.nav-bar-sections__brand-bar--opened {
     box-shadow: 0 0 10px 0 transparent;
   }
-  
+
+  @media screen and (min-width: ${Breakpoints.DESKTOP}) {
+    background: transparent;
+    box-shadow: none;
+    border-bottom: none;
+  }
 `
 const NavigationMenu = styled.ul`
-  position: absolute;
   width: 100%;
   z-index: 1;
   transition: top .3s ease-out;
-  top: -500%;
   background: white;
   padding: 1em 0;
   box-shadow: 0 0 10px 0 #e4e4e4;
 
+  position: absolute;
+  top: -500%;
+
   &.nav-bar-sections__navigation-menu--opened {
     top: 60px;
+  }
+
+  @media screen and (min-width: ${Breakpoints.DESKTOP}) {
+    position: static;
+    top: auto;
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+    background: none;
+    box-shadow: none;
   }
 `
 
@@ -53,8 +70,43 @@ const NavigationItem = styled.li`
   font-family: var(--font-heading);
   color: var(--text-regular);
   font-weight: 300;
+
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @media screen and (min-width: ${Breakpoints.DESKTOP}) {
+    padding: 0 1.25em;
+    position: relative;
+    a {
+      &:hover, &.active, &:focus {
+        color: var(--accent-dark);
+    
+
+        &:after, &:before {
+          width: 50%;
+        }
+      }
+
+      &:after, &:before {
+        content: '';
+        position: absolute;
+        top: calc(100% + 0.25em);
+        width: 0;
+        height: 1px;
+        background: var(--accent-base);
+        transition: width .3s;
+      }
+
+      &:after {
+        right: 50%;
+      }
+
+      &:before {
+        left: 50%
+      }
+    }
+
   }
 `
 
@@ -63,7 +115,7 @@ const Container = styled(ConstrainedContainer)`
   width: 100%;
   justify-content: space-between;
   box-sizing: border-box;
-  
+
   position: relative;
 
   @media screen and (min-width: 1181px) {
@@ -78,25 +130,48 @@ const Container = styled(ConstrainedContainer)`
 `
 
 const NavigationBar = () => {
+    const [opened, setOpened] = useState(false)
+    const windowWidth = useWindowWidth()
+    // Navigation Icon
+    const navigationIcon = opened ? '/assets/icons/Close_Circle.svg' : '/assets/icons/Menu_Alt_01.svg'
+    const navigationIconClass = opened
+        ? 'nav-bar__hamburger-menu-icon nav-bar__hamburger-menu-icon--opened'
+        : 'nav-bar__hamburger-menu-icon'
+
+    const renderNavigationMenu = () => {
+        return (
+            <NavigationMenu className={`${opened ? 'nav-bar-sections__navigation-menu--opened' : ''}`}>
+                {MenuSections.map((link, index) => (
+                    <NavigationItem className="nav-bar-sections__section" key={index}>
+                        <a href={link.link} onClick={() => setOpened(!opened)}> {link.label}</a>
+                    </NavigationItem>
+                ))}
+            </NavigationMenu>
+        )
+    }
+
+    const isDesktop = () => windowWidth && windowWidth >= 1181
+    const isMobile = () => windowWidth && windowWidth <= 1180
+
     return (
         <NavStyles>
             <Container>
                 <BrandBar className={`${opened ? 'nav-bar-sections__brand-bar--opened' : ''}`}>
                     <h1 className="brand-name">Katalina Pozzoli</h1>
-                    <button onClick={() => setOpened(!opened)}>
-                        <img
-                            className={navigationIconClass}
-                            src={navigationIcon} alt="menu-button"
-                        />
-                    </button>
+                    {
+                        isDesktop()
+                            ? renderNavigationMenu()
+                            : (
+                                <button onClick={() => setOpened(!opened)}>
+                                    <img
+                                        className={navigationIconClass}
+                                        src={navigationIcon} alt="menu-button"
+                                    />
+                                </button>
+                            )
+                    }
                 </BrandBar>
-                <NavigationMenu className={`${opened ? 'nav-bar-sections__navigation-menu--opened' : ''}`}>
-                    {MenuSections.map((link, index) => (
-                        <NavigationItem className="nav-bar-sections__section" key={index}>
-                            <a href={link.link} onClick={() => setOpened(!opened)}> {link.label}</a>
-                        </NavigationItem>
-                    ))}
-                </NavigationMenu>
+                {isMobile() ? renderNavigationMenu() : ''}
             </Container>
         </NavStyles>
     );

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import SocialMediaList from "../../src/components/socialMedia-list";
 import {SocialMedia} from "~/declarations";
+import ConstrainedContainer from "~/src/components/content-constraint";
 
 const PresentationStyles = styled.section`
   display: flex;
@@ -28,7 +29,7 @@ const PresentationStyles = styled.section`
         margin-right: 1.5em;
       }
     }
-   
+
   }
 
   h1 {
@@ -58,16 +59,18 @@ interface PresentationProps {
 const Presentation = ({socialMedia}: PresentationProps) => {
     return (
         <PresentationStyles>
-            <div className="presentation__content">
-                <h1> Hey there, <span className="highlight--pen"> I’m Katalina! </span></h1>
-                <p>I'm a UX Designer and web developer.
-                    My goal is to be able to combine both disciplines to design and develop meaningful, usable and
-                    accessible experiences.
-                    You can check out my work below.
-                </p>
-                <SocialMediaList items={socialMedia}/>
-            </div>
-            <img className="me-image" src="/assets/me-image.png" alt="katalina pozzoli image"/>
+            <Container>
+                <div className="presentation__content">
+                    <h1> Hey there, <span className="highlight--pen"> I’m Katalina! </span></h1>
+                    <p>I'm a UX Designer and web developer.
+                        My goal is to be able to combine both disciplines to design and develop meaningful, usable and
+                        accessible experiences.
+                        You can check out my work below.
+                    </p>
+                    <SocialMediaList items={socialMedia}/>
+                </div>
+                <img className="me-image" src="/assets/katita-image.png" alt="katalina pozzoli image"/>
+            </Container>
         </PresentationStyles>
     );
 };
