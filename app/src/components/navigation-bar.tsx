@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, VoidFunctionComponent} from 'react';
 import styled from "styled-components";
 import ConstrainedContainer from "~/src/components/content-constraint";
-import {Breakpoints, MenuSections} from "~/src/values";
+import {Breakpoints} from "~/src/values";
 import {useWindowWidth} from "~/src/effects/useWindowWidth";
+import {MenuSection} from "~/declarations";
 
 const NavStyles = styled.nav`
   .brand-name {
@@ -129,7 +130,7 @@ const Container = styled(ConstrainedContainer)`
 
 `
 
-const NavigationBar = () => {
+const NavigationBar: VoidFunctionComponent<{menuSections: MenuSection[]}> = ({menuSections}) => {
     const [opened, setOpened] = useState(false)
     const windowWidth = useWindowWidth()
     // Navigation Icon
@@ -141,7 +142,7 @@ const NavigationBar = () => {
     const renderNavigationMenu = () => {
         return (
             <NavigationMenu className={`${opened ? 'nav-bar-sections__navigation-menu--opened' : ''}`}>
-                {MenuSections.map((link, index) => (
+                {menuSections.map((link, index) => (
                     <NavigationItem className="nav-bar-sections__section" key={index}>
                         <a href={link.link} onClick={() => setOpened(!opened)}> {link.label}</a>
                     </NavigationItem>

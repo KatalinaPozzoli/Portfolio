@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from "styled-components";
 import ConstrainedContainer from "~/src/components/content-constraint";
+import {MenuSection} from "~/declarations";
+import {navigationContext, NavigationContext} from "~/root";
 
 const SAboutMe = styled.section`
-  
+
 
   .about-me {
     &__me-description {
@@ -114,8 +116,33 @@ const WebToolIcons = [
     {link: "/assets/icons/angular.png", alt: "Angular icon"},
     {link: "/assets/icons/github.png", alt: "Github icon"},
 ]
+export const AboutMeMenuSections: MenuSection[] = [
+    {
+        label: 'Home',
+        link: '/'
+    },
+    {
+        label: 'About Me',
+        link: '#'
+    },
+    {
+        label: 'Projects',
+        link: '/#projects'
+    },
+    {
+        label: 'Contact',
+        link: '/#contact'
+    },
+    {
+        label: 'Resume',
+        link: "https://api.cdn.doesrobbiedream.com/katita/PozzoliKatalinaCV.pdf"
+    },
+]
 
 const AboutMe = () => {
+    const navigation: NavigationContext = useContext(navigationContext)
+    navigation.setMenuItems(AboutMeMenuSections
+    )
     return (
         <SAboutMe>
             <Container>

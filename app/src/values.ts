@@ -108,7 +108,7 @@ export const SocialMediaList: SocialMedia[] = [
     },
 ]
 
-export const MenuSections: MenuSection[] = [
+export const HomeMenuSections: MenuSection[] = [
     {
         label: 'Home',
         link: '/'
