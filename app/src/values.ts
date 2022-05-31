@@ -29,15 +29,6 @@ export const projectsList: Project[] = [
         link: 'https://www.behance.net/gallery/134652681/IfIWere'
     },
     {
-        type: 'DESIGN',
-        title: 'Dribble Designs',
-        description: 'Daily UI design challenges to practice',
-        tools: ['UI DESIGN', 'FIGMA'],
-        image: '/assets/KP-DailyCollectionImage.png',
-        buttonLabel: 'See all the shots',
-        link: 'https://dribbble.com/KatitaP'
-    },
-    {
         type: 'DEVELOPMENT',
         title: 'My portfolio',
         description: 'I designed and developed my own page. I made it on React because I wanted to learn a new JS framework',

@@ -13,29 +13,31 @@ const PresentationStyles = styled.section`
 
   @media screen and (min-width: 600px) {
     flex-direction: row;
-    margin-top: 3em;
+    margin-top: 6em;
   }
 
   .presentation {
-    &__content {
+    &__content{
       display: flex;
       flex-direction: column;
       gap: 1.4em;
       justify-content: center;
       margin-bottom: 1.5em;
       @media screen and (min-width: 600px) {
-        max-width: 720px;
-        margin-bottom: 0;
+        max-width: 700px;
         margin-right: 1.5em;
       }
+      &-text{
+        h1 {
+          font-size: 1.5em;
+        }
+        p {
+          margin: 0.8em 0;
+        }
+      }
     }
-
   }
-
-  h1 {
-    font-size: 1.5em;
-  }
-
+  
   .me-image {
     max-width: 400px;
   }
@@ -61,12 +63,16 @@ const Presentation = ({socialMedia}: PresentationProps) => {
         <PresentationStyles>
             <Container>
                 <div className="presentation__content">
-                    <h1> Hey there, <span className="highlight--pen"> I’m Katalina! </span></h1>
-                    <p>I'm a UX Designer and web developer.
-                        My goal is to be able to combine both disciplines to design and develop meaningful, usable and
-                        accessible experiences.
-                        You can check out my work below.
-                    </p>
+                    <div className="presentation__content-text">
+                        <h1> Hey there, <span className="highlight--pen"> I’m Katalina! </span></h1>
+                        <p>I'm a UX Designer and web developer based in Spain 🇪🇸
+                        </p>
+                        <p>
+                            My goal is to be able to combine both disciplines to design and develop meaningful, usable
+                            and
+                            accessible experiences.
+                        </p>
+                    </div>
                     <SocialMediaList items={socialMedia}/>
                 </div>
                 <img className="me-image" src="/assets/kp-principal.png" alt="katalina pozzoli image"/>

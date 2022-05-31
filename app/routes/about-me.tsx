@@ -5,8 +5,6 @@ import {MenuSection} from "~/declarations";
 import {navigationContext, NavigationContext} from "~/root";
 
 const SAboutMe = styled.section`
-
-
   .about-me {
     &__me-description {
       margin-bottom: 2em;
@@ -212,7 +210,7 @@ const AboutMe = () => {
                     <a href="https://api.cdn.doesrobbiedream.com/katita/PozzoliKatalinaCV.pdf" target="_blank"> Download
                         resume </a>
                 </button>
-                <img className="about-me__image" src="/assets/kp-with-friends.png"
+                <img className="about-me__image" src="/assets/kp-friends.png"
                      alt="katalina pozzoli and group of friends"/>
             </Container>
         </SAboutMe>

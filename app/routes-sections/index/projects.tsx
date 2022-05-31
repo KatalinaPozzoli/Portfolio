@@ -5,9 +5,28 @@ import {Project} from "~/declarations";
 import ConstrainedContainer from "~/src/components/content-constraint";
 
 const SProjects = styled.section`
+  margin: 6em -2em;
+  background-color: var(--decorative-beige);
+  padding: 4em 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+
   h1 {
     width: fit-content;
     font-size: 1.5em;
+  }
+  .highlight-green{
+    position: relative;
+    &:before{
+      background-color: var(--accent-base);
+      content: "";
+      position: absolute;
+      width: calc(100% + 4px);
+      height: 45%;
+      left: -2px;
+      bottom: 0;
+      z-index: -1;
+    }
   }
 
   .project-modifier {
@@ -19,13 +38,15 @@ const SProjects = styled.section`
     &__button {
       color: #333333;
       padding: 0.7em 1.5em;
-      border-radius: 0.5em;
       font-size: 0.8em;
-
+      border: 1px solid #000000;
+      box-shadow: 2px 2px 0 #000000;
+      border-radius: 8px;
+      min-width: 12em;
+      
       &--active {
         background-color: var(--accent-base);
       }
-
       background-color: var(--accent-light);
     }
   }
@@ -50,7 +71,6 @@ const Container = styled(ConstrainedContainer)`
   width: 100%;
   gap: 1em;
   justify-content: space-between;
-  margin-top: 3em;
 `
 
 interface ProjectsProps {
@@ -65,7 +85,7 @@ const Projects = ({projects}: ProjectsProps) => {
     return (
         <SProjects>
             <Container>
-                <h1 className="highlight">Projects</h1>
+                <h1 className="highlight-green">Projects</h1>
                 <p>Here you can see some of my personal projects</p>
                 <div className="project-modifier__container">
                     <button

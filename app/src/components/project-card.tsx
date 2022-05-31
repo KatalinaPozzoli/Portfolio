@@ -38,6 +38,7 @@ const Container = styled.section`
     &__image {
       max-width: 550px;
       border-radius: 0.5em;
+      border: solid 1px black;
     }
 
     &__tool-container {
@@ -68,7 +69,9 @@ const Container = styled.section`
       box-sizing: border-box;
       gap: 30px;
       background-color: var(--primary-base);
-      border-radius: 0.5em;
+      border: 1px solid #000000;
+      box-shadow: 2px 2px 0 #000000;
+      border-radius: 8px;
 
       &-label {
         color: #333333;

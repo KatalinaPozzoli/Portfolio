@@ -11,7 +11,8 @@ const ContactMeStyles = styled.section`
   }
 
   h2 {
-    font-size: 1em;
+    font-size: 1.1em;
+    font-family: var(--font-body);
   }
 
   .contact-me {

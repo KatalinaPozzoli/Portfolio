@@ -14,7 +14,7 @@ import {MenuSection} from "~/declarations";
 import {NavigationContext, navigationContext} from "~/root";
 
 const SPortfolio = styled.section`
-  padding: 2em 2em 0 2em;
+  padding: 0 2em;
   box-sizing: border-box;
 `
 

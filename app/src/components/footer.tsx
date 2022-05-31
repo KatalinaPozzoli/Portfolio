@@ -56,7 +56,7 @@ const Footer = ({socialMedia}: FooterProps) => {
         <FooterStyles>
             <Container>
                 <SocialMediaList items={socialMedia}/>
-                <p> 2022 . Made with love and coffee by <span>Katalina Pozzoli</span></p>
+                <p> 2022 . Made with a lot of love and coffee by <span>Katalina Pozzoli</span></p>
             </Container>
         </FooterStyles>
     );
