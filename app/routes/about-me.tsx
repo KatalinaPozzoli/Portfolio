@@ -5,24 +5,56 @@ import {MenuSection} from "~/declarations";
 import {navigationContext, NavigationContext} from "~/root";
 
 const SAboutMe = styled.section`
+  padding: 0 1.5em;
+  box-sizing: border-box;
   .about-me {
     &__me-description {
-      margin-bottom: 2em;
+      font-size: 1.1em;
       grid-area: about-me;
+      max-width: 700px;
+      @media screen and (min-width: 600px){
+        margin-right: 2em;
+      }
     }
 
     &__frameworks {
       margin-bottom: 1em;
       grid-area: skills;
+      border: solid 1px black;
+      border-radius: 8px;
+      box-shadow: 2px 2px 0 #000000;
       @media screen and (min-width: 600px) {
         margin-top: 2em;
         margin-bottom: 0;
+      }
+
+      h1 {
+        width: 100%;
+        font-size: 1.3em;
+        font-weight: 400;
+        background-color: var(--accent-base);
+        padding: 0.8em 1em;
+        box-sizing: border-box;
+        border-bottom: solid 1px black;
+        border-radius: 8px 8px 0 0;
+      }
+
+      &-list {
+        padding: 0.8em;
+        box-sizing: border-box;
+        @media screen and (min-width: 600px) {
+          padding: 1em 2em;
+        }
       }
     }
 
     &__image {
       width: 100%;
       grid-area: image;
+      margin-top: 0;
+      @media screen and (min-width: 600px) {
+        margin-top: 2em;
+      }
     }
   }
 
@@ -49,24 +81,25 @@ const SAboutMe = styled.section`
 
   li {
     display: flex;
-    gap: 0.8em;
-    margin-bottom: 1.2em;
+    gap: 0.9em;
+    margin-bottom: 1.5em;
   }
 
   button {
-    margin-bottom: 1.5em;
     width: 100%;
-    max-height: 45px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.7em;
     box-sizing: border-box;
-    background-color: var(--accent-light);
-    border-radius: 0.5em;
-    grid-area: download-button;
+    background: #CDDAFD;
+    border: 1px solid #000000;
+    box-shadow: 2px 2px 0 #000000;
+    border-radius: 8px;
+    font-size: 1em;
     @media screen and (min-width: 600px) {
-      margin-top: 0;
+      margin-top: 3em;
     }
   }
 
@@ -90,7 +123,6 @@ const Container = styled(ConstrainedContainer)`
     display: grid;
     grid-template-areas:
           "about-me skills"
-          "about-me download-button"
           "image image";
   }
 
@@ -186,8 +218,8 @@ const AboutMe = () => {
                     </div>
                 </section>
                 <section className="about-me__frameworks">
-                    <div>
-                        <h1 className="highlight">Skills & Frameworks </h1>
+                    <h1>Skills & Frameworks </h1>
+                    <div className="about-me__frameworks-list">
                         <h2>
                             Design Tools
                         </h2>
@@ -204,12 +236,14 @@ const AboutMe = () => {
                                 <img src={tool.link} alt={tool.alt}/>
                             </ul>)}
                         </li>
+                        <button>
+                            <a href="https://api.cdn.doesrobbiedream.com/katita/PozzoliKatalinaCV.pdf"
+                               target="_blank"> Download
+                                resume </a>
+                        </button>
                     </div>
+
                 </section>
-                <button>
-                    <a href="https://api.cdn.doesrobbiedream.com/katita/PozzoliKatalinaCV.pdf" target="_blank"> Download
-                        resume </a>
-                </button>
                 <img className="about-me__image" src="/assets/kp-friends.png"
                      alt="katalina pozzoli and group of friends"/>
             </Container>

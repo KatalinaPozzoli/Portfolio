@@ -24,7 +24,7 @@ const BrandBar = styled.section`
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding: 0 2em;
+  padding: 0 1.5em;
   box-sizing: border-box;
   z-index: 2;
   

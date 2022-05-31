@@ -36,7 +36,7 @@ const Container = styled.section`
       gap: 1em;
     }
     &__image {
-      max-width: 550px;
+      width: 100%;
       border-radius: 0.5em;
       border: solid 1px black;
     }

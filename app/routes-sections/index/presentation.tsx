@@ -17,7 +17,7 @@ const PresentationStyles = styled.section`
   }
 
   .presentation {
-    &__content{
+    &__content {
       display: flex;
       flex-direction: column;
       gap: 1.4em;
@@ -27,19 +27,24 @@ const PresentationStyles = styled.section`
         max-width: 700px;
         margin-right: 1.5em;
       }
-      &-text{
+
+      &-text {
         h1 {
           font-size: 1.5em;
         }
+
         p {
           margin: 0.8em 0;
         }
       }
     }
+    &__image{
+      max-width: 500px;
+    }
   }
-  
+
   .me-image {
-    max-width: 400px;
+    width: 100%;
   }
 `
 
@@ -75,7 +80,9 @@ const Presentation = ({socialMedia}: PresentationProps) => {
                     </div>
                     <SocialMediaList items={socialMedia}/>
                 </div>
-                <img className="me-image" src="/assets/kp-principal.png" alt="katalina pozzoli image"/>
+                <div className="presentation__image">
+                    <img className="me-image" src="/assets/kp-principal.png" alt="katalina pozzoli image"/>
+                </div>
             </Container>
         </PresentationStyles>
     );
