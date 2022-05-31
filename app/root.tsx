@@ -18,7 +18,7 @@ export const links: LinksFunction = () => {
         {rel: "icon", href: "/assets/icons/glitters-icon.png", type: "image/png"},
         {
             rel: 'stylesheet',
-            href: "https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Merriweather:wght@300;400;700&family=Reenie+Beanie&display=swap"
+            href: "https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Merriweather:wght@300;400;700&family=Poppins:wght@100;200;300;400;500&family=Reenie+Beanie&display=swap"
         }
     ]
 }

@@ -26,7 +26,7 @@ const Container = styled.section`
   }
   
   :hover {
-    box-shadow: 4px 4px 25px rgba(170, 184, 174, 0.51);
+    box-shadow: 4px 4px 25px var(--decorative-gray);
   }
 
   .project-card {
@@ -58,6 +58,7 @@ const Container = styled.section`
     }
 
     &__description {
+      font-size: 1em;
     }
 
     &__button {

@@ -5,28 +5,16 @@ import {Project} from "~/declarations";
 import ConstrainedContainer from "~/src/components/content-constraint";
 
 const SProjects = styled.section`
-  margin: 6em -2em;
+  margin: 6em -1.5em;
   background-color: var(--decorative-beige);
   padding: 4em 0;
   box-sizing: border-box;
-  border: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 
   h1 {
     width: fit-content;
     font-size: 1.5em;
-  }
-  .highlight-green{
-    position: relative;
-    &:before{
-      background-color: var(--accent-base);
-      content: "";
-      position: absolute;
-      width: calc(100% + 4px);
-      height: 45%;
-      left: -2px;
-      bottom: 0;
-      z-index: -1;
-    }
   }
 
   .project-modifier {
@@ -43,6 +31,10 @@ const SProjects = styled.section`
       box-shadow: 2px 2px 0 #000000;
       border-radius: 8px;
       min-width: 12em;
+      cursor: pointer;
+      &:not(&--active):hover{
+        background-color: #cbebcd;
+      }
       
       &--active {
         background-color: var(--accent-base);
@@ -68,9 +60,14 @@ const SProjects = styled.section`
 const Container = styled(ConstrainedContainer)`
   display: flex;
   flex-direction: column;
-  width: 100%;
   gap: 1em;
+  width: 100%;
   justify-content: space-between;
+  padding: 0 1.5em;
+  box-sizing: border-box;
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
 `
 
 interface ProjectsProps {
@@ -85,7 +82,7 @@ const Projects = ({projects}: ProjectsProps) => {
     return (
         <SProjects>
             <Container>
-                <h1 className="highlight-green">Projects</h1>
+                <h1 className="highlight highlight--green"><span>Projects</span></h1>
                 <p>Here you can see some of my personal projects</p>
                 <div className="project-modifier__container">
                     <button

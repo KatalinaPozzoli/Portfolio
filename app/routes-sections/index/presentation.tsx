@@ -10,7 +10,6 @@ const PresentationStyles = styled.section`
   align-items: start;
   justify-content: space-between;
   margin-top: 4em;
-
   @media screen and (min-width: 600px) {
     flex-direction: row;
     margin-top: 6em;
@@ -31,6 +30,9 @@ const PresentationStyles = styled.section`
       &-text {
         h1 {
           font-size: 1.5em;
+          @media screen and (min-width: 600px) {
+            font-size: 2.5em;
+          }
         }
 
         p {
@@ -69,7 +71,7 @@ const Presentation = ({socialMedia}: PresentationProps) => {
             <Container>
                 <div className="presentation__content">
                     <div className="presentation__content-text">
-                        <h1> Hey there, <span className="highlight--pen"> I’m Katalina! </span></h1>
+                        <h1> Hey there, <span className="highlight--pen"> I’m Katalina </span></h1>
                         <p>I'm a UX Designer and web developer based in Spain 🇪🇸
                         </p>
                         <p>

@@ -23,6 +23,7 @@ const SAboutMe = styled.section`
       border: solid 1px black;
       border-radius: 8px;
       box-shadow: 2px 2px 0 #000000;
+      max-height: 400px;
       @media screen and (min-width: 600px) {
         margin-top: 2em;
         margin-bottom: 0;
@@ -66,7 +67,6 @@ const SAboutMe = styled.section`
 
   p {
     font-size: 1em;
-    line-height: 1.4em;
     letter-spacing: 0.03em;
     margin-bottom: 1em;
   }
@@ -177,9 +177,9 @@ const AboutMe = () => {
         <SAboutMe>
             <Container>
                 <section className="about-me__me-description">
-                    <h1 className="highlight">About Me</h1>
+                    <h1 className="highlight"><span>About Me</span></h1>
                     <div>
-                        <p>Hi, I'm a User experience designer and web developer based in Argentina. I started two years
+                        <p>Hi, I'm a User experience designer and web developer based in Spain. I started two years
                             ago
                             as a
                             web
