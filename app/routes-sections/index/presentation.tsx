@@ -69,7 +69,7 @@ const Presentation = ({socialMedia}: PresentationProps) => {
                     </p>
                     <SocialMediaList items={socialMedia}/>
                 </div>
-                <img className="me-image" src="/assets/katita-image.png" alt="katalina pozzoli image"/>
+                <img className="me-image" src="/assets/kp-principal.png" alt="katalina pozzoli image"/>
             </Container>
         </PresentationStyles>
     );

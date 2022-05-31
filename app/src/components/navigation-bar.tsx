@@ -6,32 +6,30 @@ import {useWindowWidth} from "~/src/effects/useWindowWidth";
 import {MenuSection} from "~/declarations";
 
 const NavStyles = styled.nav`
+  max-width: 100%;
+  background-color: var(--primary-base);
+  border-bottom: 0.5px solid black;
+  box-shadow: 0 0 10px 0 #e4e4e4;
+
   .brand-name {
     font-family: var(--font-brand);
     font-size: 1.5em;
+    
   }
 `
 const BrandBar = styled.section`
   width: 100%;
-  height: 60px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
-  padding: 0 2em;
   align-items: center;
   position: relative;
+  padding: 0 2em;
+  box-sizing: border-box;
   z-index: 2;
-  border-bottom: 1px solid var(--decorative-gray);
-  background: white;
-  box-shadow: 0 0 10px 0 #e4e4e4;
-
-  &.nav-bar-sections__brand-bar--opened {
-    box-shadow: 0 0 10px 0 transparent;
-  }
-
+  
   @media screen and (min-width: ${Breakpoints.DESKTOP}) {
-    background: transparent;
-    box-shadow: none;
-    border-bottom: none;
+    padding: 0;
   }
 `
 const NavigationMenu = styled.ul`
@@ -41,12 +39,11 @@ const NavigationMenu = styled.ul`
   background: white;
   padding: 1em 0;
   box-shadow: 0 0 10px 0 #e4e4e4;
-
   position: absolute;
   top: -500%;
 
   &.nav-bar-sections__navigation-menu--opened {
-    top: 60px;
+    top: 70px;
   }
 
   @media screen and (min-width: ${Breakpoints.DESKTOP}) {
@@ -55,6 +52,7 @@ const NavigationMenu = styled.ul`
     width: auto;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     background: none;
     box-shadow: none;
   }
@@ -79,11 +77,11 @@ const NavigationItem = styled.li`
   @media screen and (min-width: ${Breakpoints.DESKTOP}) {
     padding: 0 1.25em;
     position: relative;
+    margin-bottom: 0;
     a {
       &:hover, &.active, &:focus {
-        color: var(--accent-dark);
-    
-
+        font-weight: 500;
+        color: black;
         &:after, &:before {
           width: 50%;
         }
@@ -95,7 +93,7 @@ const NavigationItem = styled.li`
         top: calc(100% + 0.25em);
         width: 0;
         height: 1px;
-        background: var(--accent-base);
+        background: black;
         transition: width .3s;
       }
 
@@ -113,24 +111,18 @@ const NavigationItem = styled.li`
 
 const Container = styled(ConstrainedContainer)`
   display: flex;
-  width: 100%;
   justify-content: space-between;
-  box-sizing: border-box;
-
   position: relative;
-
-  @media screen and (min-width: 1181px) {
-    padding: 1.4em 0;
-    box-sizing: border-box;
-  }
+  width: 100%;
 
   button {
     cursor: pointer;
+    background: transparent;
   }
 
 `
 
-const NavigationBar: VoidFunctionComponent<{menuSections: MenuSection[]}> = ({menuSections}) => {
+const NavigationBar: VoidFunctionComponent<{ menuSections: MenuSection[] }> = ({menuSections}) => {
     const [opened, setOpened] = useState(false)
     const windowWidth = useWindowWidth()
     // Navigation Icon

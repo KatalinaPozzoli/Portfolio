@@ -212,7 +212,7 @@ const AboutMe = () => {
                     <a href="https://api.cdn.doesrobbiedream.com/katita/PozzoliKatalinaCV.pdf" target="_blank"> Download
                         resume </a>
                 </button>
-                <img className="about-me__image" src="/assets/about-me-photo.png"
+                <img className="about-me__image" src="/assets/kp-with-friends.png"
                      alt="katalina pozzoli and group of friends"/>
             </Container>
         </SAboutMe>

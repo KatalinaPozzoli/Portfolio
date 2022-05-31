@@ -12,7 +12,7 @@ const FooterStyles = styled.footer`
   display: flex;
   flex-direction: column;
   gap: 1em;
-
+  border-top: 1px solid black;
   @media screen and (min-width: 600px ) {
     display: flex;
     flex-direction: row;
@@ -22,12 +22,10 @@ const FooterStyles = styled.footer`
 
   p {
     font-size: 0.9em;
-    
     @media screen and (min-width: 600px ) {
       align-self: center;
     }
   }
-
   span {
     color: var(--primary-dark);
     font-weight: 500;

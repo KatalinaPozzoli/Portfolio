@@ -76,7 +76,7 @@ const ContactMe = ({items}: ContactMeProps) => {
     return (
         <ContactMeStyles>
             <Container>
-                <img className="contact-me__image" src="/assets/kaita-working.png" alt="katalina pozzoli working"/>
+                <img className="contact-me__image" src="/assets/kp-working.png" alt="katalina pozzoli working"/>
                 <div className="contact-me__content">
                     <h1 className="highlight"> Got a project in mind? </h1>
                     <h2>
