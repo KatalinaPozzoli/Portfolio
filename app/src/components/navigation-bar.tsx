@@ -34,7 +34,7 @@ const BrandBar = styled.section`
 `
 const NavigationMenu = styled.ul`
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   transition: top .3s ease-out;
   background: white;
   padding: 1em 0;
@@ -150,7 +150,9 @@ const NavigationBar: VoidFunctionComponent<{ menuSections: MenuSection[] }> = ({
         <NavStyles>
             <Container>
                 <BrandBar className={`${opened ? 'nav-bar-sections__brand-bar--opened' : ''}`}>
-                    <h1 className="brand-name">Katalina Pozzoli</h1>
+                    <h1 className="brand-name">
+                        <a href="/">Katalina Pozzoli</a>
+                        </h1>
                     {
                         isDesktop()
                             ? renderNavigationMenu()
