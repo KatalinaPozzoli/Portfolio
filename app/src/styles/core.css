@@ -1,0 +1,135 @@
+:root {
+    --primary-light: #E0E8FE;
+    --primary-base: #CDDAFD;
+    --primary-dark: #556182;
+
+    --accent-light: #DEF2DF;
+    --accent-base: #A7DCAB;
+    --accent-dark: #5B795E;
+
+
+    --text-regular: #333333;
+    --text-accent: var(--primary-base);
+    --text-light: #9a9a9f;
+
+    --font-brand: 'Reenie Beanie', cursive;
+    --font-body: 'Poppins', sans-serif;
+    --font-heading: 'Merriweather', serif;
+
+    --decorative-gray: #d0d0d0;
+    --decorative-beige: #F8F4EE;
+}
+
+body {
+    margin: 0;
+    background-image: radial-gradient(var(--decorative-gray) 1px, transparent 0);
+    background-size: 30px 26px;
+    max-width: 100vw;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-weight: 300;
+    color: #333333;
+    letter-spacing: 0.03em;
+}
+
+p {
+    margin: 0;
+    font-family: var(--font-body);
+    font-weight: 300;
+    color: #333333;
+    letter-spacing: 0.03em;
+    font-size: 1em;
+}
+li, ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: #333333;
+}
+@media screen and (min-width: 700px) {
+    p{
+        font-size:  1.2em;
+    }
+}
+
+
+.brand-font {
+    font-family: var(--font-brand);
+}
+
+button {
+    border: none;
+    background-color: white;
+    font-family: var(--font-body);
+    font-weight: 700;
+}
+
+.highlight > span {
+    position: relative;
+    z-index: 1;
+}
+
+.highlight--pen, .highlight {
+    position: relative;
+}
+
+.highlight::before {
+    background-color: var(--primary-base);
+    content: "";
+    position: absolute;
+    width: calc(100% + 4px);
+    height: 45%;
+    left: -2px;
+    bottom: 0;
+}
+
+.highlight--pen::before {
+    content: "";
+    z-index: -1;
+    left: -0.5em;
+    top: -0.2em;
+    border-width: 4px;
+    border-style: solid;
+    border-color: var(--primary-base);
+    position: absolute;
+    border-right-color: transparent;
+    width: 100%;
+    height: 1em;
+    transform: rotate(2deg);
+    opacity: 0.7;
+    border-radius: 50%;
+    padding: 0.1em 0.25em;
+}
+
+.highlight--green::before {
+    background-color: var(--accent-base);
+}
+
+.highlight--pen::after {
+    content: "";
+    z-index: -1;
+    left: -0.5em;
+    top: 0.1em;
+    padding: 0.1em 0.25em;
+    border-width: 4px;
+    border-style: solid;
+    border-color: var(--primary-base);
+    border-left-color: transparent;
+    border-top-color: transparent;
+    position: absolute;
+    width: 100%;
+    height: 1em;
+    transform: rotate(-1deg);
+    opacity: 0.7;
+    border-radius: 50%;
+}
+
+
