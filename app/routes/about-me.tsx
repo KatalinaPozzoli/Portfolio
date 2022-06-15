@@ -20,10 +20,12 @@ const SAboutMe = styled.section`
     &__frameworks {
       margin-bottom: 1em;
       grid-area: skills;
+      align-self: flex-start;
       border: solid 1px black;
       border-radius: 8px;
       box-shadow: 2px 2px 0 #000000;
-      max-height: 400px;
+      width: 100%;
+      max-width: 430px;
       @media screen and (min-width: 600px) {
         margin-top: 2em;
         margin-bottom: 0;
@@ -79,8 +81,9 @@ const SAboutMe = styled.section`
     margin-bottom: 1.2em;
   }
 
-  li {
+  ul {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.9em;
     margin-bottom: 1.5em;
   }
@@ -223,19 +226,19 @@ const AboutMe = () => {
                         <h2>
                             Design Tools
                         </h2>
-                        <li>
-                            {DesignToolIcons.map((tool, index) => <ul key={index}>
+                        <ul>
+                            {DesignToolIcons.map((tool, index) => <li key={index}>
                                 <img src={tool.link} alt={tool.alt}/>
-                            </ul>)}
-                        </li>
+                            </li>)}
+                        </ul>
                         <h2>
                             Development frameworks
                         </h2>
-                        <li>
-                            {WebToolIcons.map((tool, index) => <ul key={index}>
+                        <ul>
+                            {WebToolIcons.map((tool, index) => <li key={index}>
                                 <img src={tool.link} alt={tool.alt}/>
-                            </ul>)}
-                        </li>
+                            </li>)}
+                        </ul>
                         <button>
                             <a href="https://api.cdn.doesrobbiedream.com/katita/PozzoliKatalinaCV.pdf"
                                target="_blank"> Download
