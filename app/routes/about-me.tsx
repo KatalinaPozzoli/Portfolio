@@ -213,10 +213,8 @@ const AboutMe = () => {
 
                         </p>
                         <p>
-                            Beyond design and development, when I'm not working, I'm probably bouldering or reading
-                            about
-                            human
-                            psychology or reading some utopian sci-fi novel.
+                            Beyond design and development, when I'm not working, I'm probably bouldering, playing board games with friends or reading
+                            about human psychology or some utopian sci-fi novel.
                         </p>
                     </div>
                 </section>

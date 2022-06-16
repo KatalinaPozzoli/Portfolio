@@ -80,7 +80,6 @@ const NavigationItem = styled.li`
     margin-bottom: 0;
     a {
       &:hover, &.active, &:focus {
-        font-weight: 500;
         color: black;
         &:after, &:before {
           width: 50%;
