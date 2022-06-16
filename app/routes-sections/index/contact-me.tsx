@@ -84,7 +84,7 @@ const ContactMe = ({items}: ContactMeProps) => {
                     <h2>
                         Let's make something awesome together. You can find me on my social media:
                     </h2>
-                    <div className="contact-me__social-media-container">
+                    <ul className="contact-me__social-media-container">
                         {items.map((socialMedia, index) => (
                             <li className="contact-me__social-media-list" key={index}>
                                 <a className="contact-me__social-media-item" href={socialMedia.link} target="_blank">
@@ -92,7 +92,7 @@ const ContactMe = ({items}: ContactMeProps) => {
                                     <p className="contact-me__social-media-label"> {socialMedia.label} </p>
                                 </a>
                             </li>))}
-                    </div>
+                    </ul>
                 </div>
 
             </Container>

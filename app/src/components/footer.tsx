@@ -26,6 +26,7 @@ const FooterStyles = styled.footer`
       align-self: center;
     }
   }
+
   span {
     color: var(--primary-dark);
     font-weight: 500;
@@ -56,7 +57,7 @@ const Footer = ({socialMedia}: FooterProps) => {
         <FooterStyles>
             <Container>
                 <SocialMediaList items={socialMedia}/>
-                <p> 2022 . Made with a lot of love and coffee by <span> Katalina Pozzoli </span></p>
+                <p> 2022 . Made with a lot of love and coffee by <span> <a href="/">Katalina Pozzoli</a> </span></p>
             </Container>
         </FooterStyles>
     );

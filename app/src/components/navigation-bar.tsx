@@ -118,6 +118,7 @@ const Container = styled(ConstrainedContainer)`
   button {
     cursor: pointer;
     background: transparent;
+    padding: 0;
   }
 
 `

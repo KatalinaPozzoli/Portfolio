@@ -33,7 +33,7 @@ export const projectsList: Project[] = [
         title: 'My portfolio',
         description: 'I designed and developed my own page. I made it on React because I wanted to learn a new JS framework',
         tools: ['FIGMA', 'REMIX', 'REACT', 'TYPESCRIPT', 'HTML', 'CSS'],
-        image: '/assets/KP-portfolio-design.png',
+        image: '/assets/KP-portfolio.png',
         buttonLabel: 'Try it',
         link: 'https://katalinapozzoli.com/'
     },
