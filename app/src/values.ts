@@ -3,6 +3,15 @@ import {MenuSection, Project, SocialMedia} from "~/declarations";
 export const projectsList: Project[] = [
     {
         type: 'DESIGN',
+        title: 'Makamatu - Rebranding',
+        description: 'Design a new logo, brand identity, and Instagram content creation for an existing brand',
+        tools: ['PHOTOSHOP', 'ILLUSTRATOR', 'FIGMA',],
+        image: '/assets/Makamatu.png',
+        buttonLabel: 'Read the study case',
+        link: 'https://www.behance.net/gallery/146621455/Makamatu-rediseno-de-marca'
+    },
+    {
+        type: 'DESIGN',
         title: 'BudgTravel',
         description: 'Design a travel budget app for a UX challenge',
         tools: ['UX RESEARCH', 'UI DESIGN', 'PROTOTYPING', 'FIGMA'],
