@@ -6,7 +6,7 @@ export const projectsList: Project[] = [
         title: 'Makamatu - Rebranding',
         description: 'Design a new logo, brand identity, and Instagram content creation for an existing brand',
         tools: ['PHOTOSHOP', 'ILLUSTRATOR', 'FIGMA',],
-        image: '/assets/Makamatu.png',
+        image: '/assets/makamatu.png',
         buttonLabel: 'Read the study case',
         link: 'https://www.behance.net/gallery/146621455/Makamatu-rediseno-de-marca'
     },
