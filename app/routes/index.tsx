@@ -37,7 +37,7 @@ export const HomeMenuSections: MenuSection[] = [
     },
     {
         label: 'Resume',
-        link: "https://api.cdn.doesrobbiedream.com/katita/PozzoliKatalinaCV.pdf"
+        link: "https://drive.google.com/file/d/1xOOhMwonbT9ZYgcxG2JREWvWCnnFIPX1/view?usp=sharing"
     },
 ]
 
