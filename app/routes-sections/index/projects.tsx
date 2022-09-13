@@ -48,12 +48,14 @@ const SProjects = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    gap: 1.2em;
+    width: 100%;
     @media screen and (min-width: 768px) {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: space-between;
+      //justify-content: space-between;
+      justify-content: flex-start;
     }
   }
 `

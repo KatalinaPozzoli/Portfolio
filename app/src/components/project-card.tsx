@@ -14,6 +14,7 @@ const Container = styled.section`
   box-shadow: 0 2px 8px rgba(170, 184, 174, 0.3);
   gap: 1em;
   max-width: 210px;
+  width: 100%;
   
   @media (min-width:320px){
     max-width: 290px;
@@ -22,7 +23,7 @@ const Container = styled.section`
     height: 500px;
   }
   @media screen and (min-width: 850px){
-    max-width: 320px;
+    max-width: 330px;
   }
   
   :hover {

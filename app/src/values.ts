@@ -3,6 +3,15 @@ import {MenuSection, Project, SocialMedia} from "~/declarations";
 export const projectsList: Project[] = [
     {
         type: 'DESIGN',
+        title: 'Bloom - Brand Identity',
+        description: 'Design a full brand identity, logo creation & packaging ',
+        tools: ['PHOTOSHOP', 'ILLUSTRATOR', 'FIGMA',],
+        image: '/assets/Bloom-label.jpg',
+        buttonLabel: 'Read the study case',
+        link: 'https://www.behance.net/gallery/152541179/Bloom-Brand-Identity'
+    },
+    {
+        type: 'DESIGN',
         title: 'Makamatu - Rebranding',
         description: 'Design a new logo, brand identity, and Instagram content creation for an existing brand',
         tools: ['PHOTOSHOP', 'ILLUSTRATOR', 'FIGMA',],
